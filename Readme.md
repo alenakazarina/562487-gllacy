@@ -1,7 +1,7 @@
 # Личный проект «Глейси»
 
 * Студент: [Alena Kazarina](https://up.htmlacademy.ru/htmlcss/21/user/562487).
-* Наставник: `Неизвестно`.
+* Наставник: `[Дмитрий Мальнев](https://htmlacademy.ru/profile/fuckomako).
 
 ---
 
