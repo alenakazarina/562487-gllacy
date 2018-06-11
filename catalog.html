@@ -6,11 +6,11 @@
   </head>
   <body style = "background-color: lightblue;">
   	<header class="page-header">
-  		<nav class="navigation">
+  		<nav class="navigation" aria-label="Основное меню">
 
 				<!-- логотип -->
 				<a class="header-logo" href="index.html">
-					<img src="img/logo.svg" alt="Логотип магазина «Глэйси»" width="154" height="64">
+					<img src="img/logo.svg" alt="На главную страницу интернет-магазина «Глэйси»" width="154" height="64">
 				</a>
 
 				<!-- меню -->
@@ -20,7 +20,7 @@
 				      <a class="site-navigation-link">Каталог</a>
 				    </div>
 				    
-				    <ul class="dropdown-menu">
+				    <ul class="dropdown-menu" aria-label="Каталог меню">
 				      <li class="dropdown-menu-item"> 
 				        <a href="#" class="dropdown-menu-link">Новинки</a></li>
 							<li class="dropdown-menu-item">
@@ -51,18 +51,19 @@
 				<ul class="search-block">
 					<li class="dropdown-toggle">
 				    
-				    <div class="search-layout">
-				      <input type="image" class="search-link" src="img/search.svg" alt="Поиск по сайту" width="17" height="17">
-				      <input type="image" class="search-link-hover" src="img/search-black.svg" alt="Найти" width="17" height="17">
-				    </div>
+				    <a class="modal-opener search-layout" href="#modal-search">
+				    	<img class="search-link" src="img/search.svg" alt="Поиск по сайту" width="17" height="17">	
+				      <img class="search-link-hover" src="img/search-black.svg" alt="Поиск по сайту" width="17" height="17" style="display: none">
+				    </a>
 				    
-				    <ul class="dropdown-search-form">
+				    <ul class="modal-search" id="modal-search">
 				     <li class="search-form-layout">
 				      <form class="search-form">
 				       <input type="search" name="search" placeholder="Что ищем?">
 				      </form>
 				     </li>   
 				    </ul>
+
 				  </li>
 				</ul>
 
@@ -72,11 +73,11 @@
 
 						<div class="login-layout">
 				      <input type="image" class="login-link" src="img/login.svg" alt="Войти" width="21" height="19">
-				      <input type="image" class="login-link-hover" src="img/login-black.svg" alt="Войти" width="21" height="19">
+				      <input type="image" class="login-link-hover" src="img/login-black.svg" alt="Войти" width="21" height="19" style="display: none">
 				      <label>Вход</label>
 				    </div>
 						
-						<ul class="dropdown-login-form">
+						<ul class="dropdown-login-form visually-hidden">
 				      <li class="login-form-layout">
 				        <form class="login-form">
 				          <input type="email" name="user-email" placeholder="Электронная почта">
@@ -99,7 +100,7 @@
 					<li class="dropdown-toggle">
 				    
 				    <div class="cart-layout">
-				      <input type="image" class="cart-link" src="img/cart-full.svg" alt="Корзина с товарами" width="21" height="20"> 
+				      <input id="cart" type="image" class="cart-link" src="img/cart-full.svg" alt="Корзина с товарами" width="21" height="20"> 
 				      <label>2 товара</label>
 				    </div>
 				    
@@ -110,14 +111,14 @@
 				            <caption>Итого: 750 руб.</caption>
 				            <tr>
 				              <td><input type="image" class="cart-cross" src="img/cross-small.svg" alt="Удалить из корзины" width="11" height="11"></td>
-				              <td><img src="img/item-1-sm.jpg" alt="Пломбир с апельсиновым джемом" width="33" height="33"></td>
+				              <td><img src="img/item-1-sm.jpg" alt="" width="33" height="33"></td>
 				              <td>Пломбир с апельсиновым джемом </td>
 				              <td>1,5кг х <span>200 руб.</span></td>
 				              <td>300 руб.</td>
 				            </tr>
 				            <tr>
 				              <td><input type="image" class="cart-cross" src="img/cross-small.svg" alt="Удалить из корзины" width="11" height="11"></td>
-				              <td><img src="img/item-3-sm.jpg" alt="Клубничный пломбир" width="33" height="33"></td>
+				              <td><img src="img/item-3-sm.jpg" alt="" width="33" height="33"></td>
 				              <td>Клубничный пломбир с присыпкой из белого шоколада</td>
 				              <td>1,5кг х <span>300 руб.</span></td>
 				              <td>450 руб.</td>
@@ -146,13 +147,13 @@
 				<li><a href="catalog.html">Каталог</a></li>
 				<li class="breadcrumbs-current">Сливочное мороженое</li>
 			</ul>
-			<h1>Сливочное мороженое</h1>
+			<h1 class="page-title">Сливочное мороженое</h1>
 
 			<section class="filters">
 				<h2 class="visually-hidden">Фильтр товаров</h2>
-				<form class="filters-form">
+				<form class="filters-form" method="get" action="https://echo.htmlacademy.ru">
 					<fieldset class="filter-sorting">
-						<legend>Сортировка</legend>
+						<legend>Сортировка:</legend>
 						<select>
 							<option selected>по популярности</option>
 							<option >сначала недорогие</option>
@@ -163,33 +164,56 @@
 
 					<fieldset class="filter-price">
 						<legend>Цена 100 руб. - 500 руб.</legend>
-						<input type="range" min="100" max="500" step="10">	
+						<input class="first-range rotate" type="range" name="first-range" min="0" max="250" value="50" step="10">
+          	<input class="second-range" type="range" name="second-range" min="0" max="250" value="50" step="10">
 					</fieldset>
 
 					<fieldset class="filter-fatness">
-						<legend>Жирность</legend>
-						<input type="radio" name="fatness" id="fatness-field-1">
-						<label for="fatness-field-1">0%</label>
-						<input type="radio" name="fatness" id="fatness-field-2" checked>
-						<label for="fatness-field-2">до 10%"</label>
-						<input type="radio" name="fatness" id="fatness-field-3">
-						<label for="fatness-field-3">до 30%</label>
-						<input type="radio" name="fatness" id="fatness-field-4">
-						<label for="fatness-field-4">выше 30%</label>
+						<legend>Жирность:</legend>
+						<ul>
+							<li class="filter-option">
+								<input class="visually-hidden" type="radio" name="fatness" id="fatness-field-1">
+								<label for="fatness-field-1">0%</label>
+							</li>
+							<li class="filter-option">
+								<input class="visually-hidden" type="radio" name="fatness" id="fatness-field-2" checked>
+								<label for="fatness-field-2">до 10%</label>
+							</li>
+							<li class="filter-option">
+								<input class="visually-hidden" type="radio" name="fatness" id="fatness-field-3">
+								<label for="fatness-field-3">до 30%</label>
+							</li>
+							<li class="filter-option">
+								<input class="visually-hidden" type="radio" name="fatness" id="fatness-field-4">
+								<label for="fatness-field-4">выше 30%</label>
+							</li>
+						</ul>
 					</fieldset>
 
-					<fieldset class="filter-fatness">
+					<fieldset class="filter-inner">
 						<legend>Наполнители:</legend>
-						<input type="checkbox" name="inner" id="inner-field-1" checked>
-						<label for="inner-field-1">шоколадные</label>
-						<input type="checkbox" name="inner" id="inner-field-2" checked>
-						<label for="inner-field-2">сахарные присыпки</label>
-						<input type="checkbox" name="inner" id="inner-field-3">
-						<label for="inner-field-3">фрукты</label>
-						<input type="checkbox" name="inner" id="inner-field-4">
-						<label for="inner-field-4">сиропы</label>
-						<input type="checkbox" name="inner" id="inner-field-5">	
-						<label for="inner-field-5">джемы</label>
+						<ul>
+							<li class="filter-option">
+								<input class="visually-hidden" type="checkbox" name="inner-chocolate" id="inner-field-1" checked>
+								<label for="inner-field-1">шоколадные</label>
+							</li>
+							<li class="filter-option">
+								<input class="visually-hidden" type="checkbox" name="inner-sugar" id="inner-field-2" checked>
+								<label for="inner-field-2">сахарные присыпки</label>
+							</li>
+							<li class="filter-option">
+								<input class="visually-hidden" type="checkbox" name="inner-fruit" id="inner-field-3">
+								<label for="inner-field-3">фрукты</label>
+							</li>
+							<li class="filter-option">
+								<input class="visually-hidden" type="checkbox" name="inner-syrup" id="inner-field-4">
+								<label for="inner-field-4">сиропы</label>
+							</li>
+							<li class="filter-option">
+								<input class="visually-hidden" type="checkbox" name="inner-jam" id="inner-field-5">	
+								<label for="inner-field-5">джемы</label>
+							</li>
+						</ul>
 					</fieldset>
 
 					<input type="submit" value="Применить">
@@ -203,8 +227,8 @@
 
 					<li class="catalog-item">
 						<div class="catalog-item-image">
-	            <a href="#" title="На весь экран">
-	              <img src="img/item-1.jpg" alt="Сливочное" width="267" height="267">
+	            <a href="#">
+	              <img src="img/item-1.jpg" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой" width="267" height="267">
 	            </a>
 	          </div>
 	          <p class="catalog-item-price">
@@ -220,8 +244,8 @@
 
 					<li class="catalog-item">
 						<div class="catalog-item-image">
-	            <a href="#" title="На весь экран">
-	              <img src="img/item-2.jpg" alt="Сливочно-кофейное" width="267" height="267">
+	            <a href="#">
+	              <img src="img/item-2.jpg" alt="Сливочно-кофейное с кусочками шоколада" width="267" height="267">
 	            </a>
 	          </div>
 	          <p class="catalog-item-price">
@@ -237,8 +261,8 @@
 
 					<li class="catalog-item">
 						<div class="catalog-item-image">
-	            <a href="#" title="На весь экран">
-	             <img src="img/item-3.jpg"  alt="Сливочно-клубничное" width="267" height="267">
+	            <a href="#">
+	             <img src="img/item-3.jpg"  alt="Сливочно-клубничное с присыпкой из белого шоколада" width="267" height="267">
 	            </a>
 	          </div>
 	          <p class="catalog-item-price">
@@ -254,8 +278,8 @@
 
 					<li class="catalog-item">
 						<div class="catalog-item-image">
-	            <a href="#" title="На весь экран">
-	             <img src="img/item-4.jpg"  alt="Сливочное крем-брюле" width="267" height="267">
+	            <a href="#">
+	             <img src="img/item-4.jpg"  alt="Сливочное крем-брюле с карамельной подливкой" width="267" height="267">
 	            </a>
 	          </div>
 	          <p class="catalog-item-price">
@@ -271,8 +295,8 @@
 
 					<li class="catalog-item">
 						<div class="catalog-item-image">
-	            <a href="#" title="На весь экран">
-	             <img src="img/item-5.jpg"  alt="Сливочное с джемом" width="267" height="267">
+	            <a href="#">
+	             <img src="img/item-5.jpg"  alt="Сливочное с брусничным джемом" width="267" height="267">
 	            </a>
 	          </div>
 	          <p class="catalog-item-price">
@@ -288,8 +312,8 @@
 
 					<li class="catalog-item">
 						<div class="catalog-item-image">
-	            <a href="#" title="На весь экран">
-	             <img src="img/item-6.jpg"  alt="Сливочно-черничное" width="267" height="267">
+	            <a href="#">
+	             <img src="img/item-6.jpg"  alt="Сливочно-черничное с цельными ягодами черники" width="267" height="267">
 	            </a>
 	          </div>
 	          <p class="catalog-item-price">
@@ -305,8 +329,8 @@
 
 					<li class="catalog-item">
 						<div class="catalog-item-image">
-	            <a href="#" title="На весь экран">
-	             <img src="img/item-7.jpg"  alt="Сливочно-лимонное" width="267" height="267">
+	            <a href="#">
+	             <img src="img/item-7.jpg"  alt="Сливочно-лимонное с карамельной присыпкой" width="267" height="267">
 	            </a>
 	          </div>
 	          <p class="catalog-item-price">
@@ -322,7 +346,7 @@
 
 					<li class="catalog-item">
 						<div class="catalog-item-image">
-	            <a href="#" title="На весь экран">
+	            <a href="#">
 	             <img src="img/item-8.jpg"  alt="Сливочное с шоколадной стружкой" width="267" height="267">
 	            </a>
 	          </div>
@@ -339,8 +363,8 @@
 
 					<li class="catalog-item">
 						<div class="catalog-item-image">
-	            <a href="#" title="На весь экран">
-	             <img src="img/item-9.jpg"  alt="Сливочно-ванильное" width="267" height="267">
+	            <a href="#">
+	             <img src="img/item-9.jpg"  alt="Сливочно-ванильное с кусочками шоколада" width="267" height="267">
 	            </a>
 	          </div>
 	          <p class="catalog-item-price">
@@ -356,7 +380,7 @@
 
 					<li class="catalog-item">
 						<div class="catalog-item-image">
-	            <a href="#" title="На весь экран">
+	            <a href="#">
 	             <img src="img/item-11.jpg"  alt="Сливочное с ментоловым сиропом" width="267" height="267">
 	            </a>
 	          </div>
@@ -373,8 +397,8 @@
 
 					<li class="catalog-item">
 						<div class="catalog-item-image">
-	            <a href="#" title="На весь экран">
-	             <img src="img/item-12.jpg"  alt="Сливочное c черным шоколадом" width="267" height="267">
+	            <a href="#">
+	             <img src="img/item-12.jpg"  alt="Сливочное с кусочками черного шоколада" width="267" height="267">
 	            </a>
 	          </div>
 	          <p class="catalog-item-price">
@@ -390,7 +414,7 @@
 
 					<li class="catalog-item">
 						<div class="catalog-item-image">
-	            <a href="#" title="На весь экран">
+	            <a href="#">
 	             <img src="img/item-10.jpg"  alt="Сливочное с мятным сиропом" width="267" height="267">
 	            </a>
 	          </div>
@@ -407,30 +431,34 @@
 				</ul>
 
 				<ul class="pagination-list">
-					<li class="pagination-item-prev"><a href="#">prev</a></li>
+					<li class="pagination-item-prev rotate">
+						<a href="#"><img src="img/icon-right-small.svg" width="8" height="12" alt="На предыдущую страницу"></a>
+					</li>
           <li class="pagination-item pagination-item-current"><a>1</a></li>
-          <li class="pagination-item "><a href="#">2</a></li>
+          <li class="pagination-item"><a href="#">2</a></li>
           <li class="pagination-item"><a href="#">3</a></li>
           <li class="pagination-item"><a href="#">4</a></li>
           <li class="pagination-item"><a href="#">5</a></li>
-          <li class="pagination-item-next"><a href="#">next</a></li>
+          <li class="pagination-item-next">
+          	<a href="#"><img src="img/icon-right-small.svg" width="8" height="12" alt="На следующую страницу"></a>
+	      	</li>
         </ul>
 
 			</section>
 		</main>
    
-   	<footer class="page-footer">
+   <footer class="page-footer">
 			<ul class="socials-list">
-				<li class="socials-items"><a href="https://twitter.com" target="_blank" title="«Глэйси» в Twitter">Twitter</a></li>
-				<li class="socials-items"><a href="https://instagram.com" target="_blank" title="«Глэйси» в Instagram">Instagram</a></li>
-				<li class="socials-items"><a href="https://facebook.com" target="_blank" title="«Глэйси» в Facebook">Facebook</a></li>
-				<li class="socials-items"><a href="https://vk.com" target="_blank" title="«Глэйси» во ВКонтакте">ВКонтакте</a></li>
+				<li class="socials-items"><a href="https://twitter.com" target="_blank" aria-label="«Глэйси» в Twitter"><img src="img/twitter.svg" width="32" height="32" alt="Twitter"></a></li>
+				<li class="socials-items"><a href="https://instagram.com" target="_blank" aria-label="«Глэйси» в Instagram"></a><img src="img/instagram.svg" width="32" height="32" alt="Instagram"></li>
+				<li class="socials-items"><a href="https://facebook.com" target="_blank" aria-label="«Глэйси» в Facebook"><img src="img/facebook.svg" width="32" height="32" alt="Facebook"></a></li>
+				<li class="socials-items" ><a href="https://vk.com" target="_blank" aria-label="«Глэйси» во ВКонтакте"><img src="img/vk.svg" width="32" height="32" alt="ВКонтакте"></a></li>
 			</ul>
 
 			<div class="footer-info">
 				<ul class="footer-info-prod">
 					<li>
-						<a href="#"><img src="img/heart.svg" alt="Мы любим наших партнёров" width="15" height="13"> Для поставщиков</a>
+						<img src="img/heart.svg" alt="Мы любим наших партнёров" width="15" height="13"><a href="#">Для поставщиков</a>
 					</li>
 					<li><a href="#">О производстве</a></li>
 				</ul>
@@ -442,7 +470,7 @@
 
 			<div class="footer-copyright">
 				<a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">
-					<img src="img/logo-htmlacademy.svg" alt="Логотип HTML Academy" width="108" height="37"></a>
+					<img src="img/logo-htmlacademy.svg" alt="HTML Academy" width="108" height="37"></a>
 				<p>Сделано в HTML Academy &#169; 2018</p>
 			</div>
 
