@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>«Глэйси» — Интернет-Магазин Мороженого</title>
 
-		<!-- Стили -->
 		<link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -13,13 +12,13 @@
 
 		<header class="page-header">
 			<div class="container">
-				<nav class="navigation flex-center" aria-label="Основное меню">
+				<nav class="navigation flex-center">
 
 					<div class="nav-left flex-center">
 						<a class="header-logo">
 							<img src="img/logo.svg" alt="Логотип магазина «Глэйси»" width="154" height="64">
 						</a>
-						<ul class="site-navigation flex-center">
+						<ul class="site-navigation flex"  aria-label="Основное меню">
 						  <li class="site-navigation-item toggle flex-column">   
 						    <a href="#" class="site-navigation-link link">Каталог</a>
 
@@ -28,9 +27,9 @@
 						        <a href="#">Новинки</a></li>
 									<li class="dropdown-menu-item">
 						        <a href="catalog.html">Сливочное</a></li>
-								  <li class="dropdown-menu-item">
+								 <li class="dropdown-menu-item">
 						        <a href="#">Щербеты</a></li>
-									<li class="dropdown-menu-item">
+									 <li class="dropdown-menu-item">
 						        <a href="#">Фруктовый лед</a></li>
 							    <li class="dropdown-menu-item">
 						        <a href="#">Мелорин</a></li>
@@ -41,7 +40,7 @@
 						  	<a href="#" class="site-navigation-link link">Доставка и оплата</a>
 						  </li>   
 							<li class="site-navigation-item flex-column">
-								<a href="#" class="site-navigation-link link">О компании</a>
+								<a href="#" class="site-navigation-link link">О Компании</a>
 						  </li>      
 						</ul>
 					</div> <!-- nav-left ends-->
@@ -69,7 +68,7 @@
 						<ul class="login-block">
 							<li class="toggle">
 								
-								<a href="#login-form" class="opener" >
+								<a href="#login-form" class="opener flex-center" >
 						    	<img class="image" src="img/login.svg" alt="Войти" width="21" height="19">	
 						      <img class="image-hover" src="img/login-black.svg" alt="Войти"  width="21" height="19">
 						      <span>Вход</span>
@@ -180,12 +179,13 @@
 						<li class= "catalog-item flex-column">
 							<div class="catalog-item-image">
 		            <a href="catalog.html">
-		            	<img class="hit" src="img/hit.svg" alt="Хит" width="61" height="61"><br>
+		            	<img class="hit" src="img/hit.svg" alt="Хит" width="61" height="61">
 		              <img src="img/item-1.jpg" alt="Сливочное мороженое" width="267" height="267">
 		            </a>
 		          </div>
-		          <p class="catalog-item-price">
-		            310 ₽<span>/кг</span>
+		          <p class="catalog-item-price flex">
+		            310<img src="img/rub.svg" alt="Рублей" width="31" height="36">
+		            <span>/кг</span>
 		          </p>
 		          <h3 class="catalog-item-title">
 		            <a href="catalog.html">Сливочное с апельсиновым джемом и цитрусовой стружкой
@@ -197,12 +197,13 @@
 						<li class= "catalog-item flex-column">
 							<div class="catalog-item-image">
 		            <a href="catalog.html">
-		            	<img class="hit" src="img/hit.svg" alt="Хит" width="61" height="61"><br>
+		            	<img class="hit" src="img/hit.svg" alt="Хит" width="61" height="61">
 		              <img src="img/item-2.jpg" alt="Сливочное мороженое" width="267" height="267">
 		            </a>
 		          </div>
-		          <p class="catalog-item-price">
-		            380 ₽<span>/кг</span>
+		          <p class="catalog-item-price flex">
+		            380<img src="img/rub.svg" alt="Рублей" width="31" height="36">
+		            <span>/кг</span>
 		          </p>
 		          <h3 class="catalog-item-title">
 		            <a href="catalog.html">Сливочно-кофейное с кусочками шоколада</a>
@@ -213,12 +214,13 @@
 						<li class= "catalog-item flex-column">
 							<div class="catalog-item-image">
 		            <a href="catalog.html">
-		            	<img class="hit" src="img/hit.svg" alt="Хит" width="61" height="61"><br>
+		            	<img class="hit" src="img/hit.svg" alt="Хит" width="61" height="61">
 		              <img src="img/item-3.jpg"  alt="Сливочное мороженое" width="267" height="267">
 		            </a>
 		          </div>
-		          <p class="catalog-item-price">
-		            355 ₽<span>/кг</span>
+		          <p class="catalog-item-price flex">
+		            355<img src="img/rub.svg" alt="Рублей" width="31" height="36">
+		            <span>/кг</span>
 		          </p>
 		          <h3 class="catalog-item-title">
 		            <a href="catalog.html">Сливочно-клубничное с присыпкой из белого шоколада</a>
@@ -229,12 +231,13 @@
 		        <li class= "catalog-item flex-column">
 							<div class="catalog-item-image">
 		            <a href="catalog.html">
-		            	<img class="hit" src="img/hit.svg" alt="Хит" width="61" height="61"><br>
+		            	<img class="hit" src="img/hit.svg" alt="Хит" width="61" height="61">
 		              <img src="img/item-4.jpg"  alt="Сливочное мороженое" width="267" height="267">
 		            </a>
 		          </div>
-		          <p class="catalog-item-price">
-		            355 ₽<span>/кг</span>
+		          <p class="catalog-item-price flex">
+		            415<img src="img/rub.svg" alt="Рублей" width="31" height="36">
+		            <span>/кг</span>
 		          </p>
 		          <h3 class="catalog-item-title">
 		            <a href="catalog.html">Сливочное крем-брюле с карамельной подливкой</a>
@@ -247,7 +250,7 @@
 
 				<section class="advantages">
 					<h2 class="visually-hidden">Преимущества магазина «Глэйси»</h2>
-					<p class="advantages-lead">Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного<br> производства на развес</p>
+					<p class="advantages-lead">Магазин Глэйси <span>–</span>это онлайн- и офлайн-магазин по продаже мороженого собственного<br> производства на развес</p>
 					<ul class="advantages-list flex">
 						<li class="advantages-item flex">
 							<h3 class="advantages-item-title"><img src="img/seo-1.svg" alt="Собственное производство" width="49" height="49"></h3>
@@ -295,8 +298,8 @@
 						<div class="sign-up-bg flex-column">
 							<h2 class="visually-hidden">Подписка на рассылку</h2>
 							<p class="sign-up-text">
-								Подпишитесь на нашу сладкую рассылку и будете всегда в курсе<br>
-								всего самого вкусного, что у нас происходит. Обещаем не спамить <br>
+								Подпишитесь на нашу сладкую рассылку и будете всегда в курсе
+								всего самого вкусного, что у нас происходит. Обещаем не спамить
 								и не слать всякой ненужной ерунды. Честно =)
 							</p>
 							<form class="sign-up-form flex">
@@ -311,13 +314,12 @@
 
 			<section class="address">
 				<div class="address-info flex-column">
-					<h2 class="address-info-title">Адрес главного офиса <br> 
+					<h2 class="address-info-title">Адрес главного офиса
 						и офлайн-магазина:</h2>
-					<p class="address-info-text"><span>ул. Большая Конюшенная 19/8, Санкт-Петербург</span></p>
-					<h3 class="address-info-title">Для заказов по телефону:</h3>
-					<p class="address-info-text">
-						<span>8 812 450-25-25</span> <br> 
-									c 10 до 20 ежедневно</p>
+					<p class="address-info-text">ул. Большая Конюшенная 19/8, Санкт-Петербург</p>
+					<h3 class="address-info-subtitle">Для заказов по телефону:</h3>
+					<p class="address-info-tel">8 812 450-25-25</p>
+					<span>(c 10 до 20 ежедневно)</span>
 					<a href="#modal-callback" class="modal-opener button">Форма обратной связи</a>
 				</div>
 				<div class="map-frame">
@@ -328,7 +330,7 @@
 		</main>
 
 		<footer class="page-footer">
-			<div class="container flex">
+			<div class="container flex-center">
 				<ul class="socials-list flex">
 					<li class="socials-items"><a href="https://twitter.com" target="_blank" aria-label="«Глэйси» в Twitter"><img src="img/twitter.svg" width="32" height="32" alt="Twitter"></a></li>
 					<li class="socials-items"><a href="https://instagram.com" target="_blank" aria-label="«Глэйси» в Instagram"><img src="img/instagram.svg" width="32" height="32" alt="Instagram"></a></li>
