@@ -11,9 +11,11 @@
   <body>
 
 		<header class="page-header">
-			<div class="container">
-				<nav class="navigation flex-center">
+			<!-- page-header-container starts-->
+			<div class="page-header-container"> 
 
+				<nav class="navigation flex-center">
+					<!-- nav-left starts-->
 					<div class="nav-left flex-center">
 						<a class="header-logo">
 							<img src="img/logo.svg" alt="Логотип магазина «Глэйси»" width="154" height="64">
@@ -43,8 +45,8 @@
 								<a href="#" class="site-navigation-link link">О Компании</a>
 						  </li>      
 						</ul>
-					</div> <!-- nav-left ends-->
-					
+					</div>
+					<!-- nav-right starts-->
 					<div class="nav-right flex-center-end">
 						<ul class="search-block">
 							<li class="toggle flex-column">
@@ -100,7 +102,7 @@
 						    </a>
 						  </li>
 						</ul>
-					</div> <!-- nav-right ends -->
+					</div>
 				</nav>
 
 	  		<section class="header-contacts">
@@ -109,13 +111,14 @@
 	  			<p class="tel">8 812 450-25-25</p>
 	  		</section>
 
-  		</div>  <!-- container ends -->
+  		</div>
 		</header>
 
 		<main class="main-content">
-			<div class="container">
-				<section class="product-slides">
 
+			<section class="product-slides">
+				<!-- product-slides-container starts-->
+				<div class="product-slides-container"> 
 					<h2 class="visually-hidden">Мороженое магазина «Глэйси»</h2>
 					<ul class="product-slides-list flex" aria-label="Слайдер">
 						<li class="product-slide current">
@@ -151,9 +154,12 @@
 				    </div>
 				    <a href="#" class="button">Давайте оба!</a>
 			    </div>
-				</section>
+			  </div>
+			</section>
 
-				<section class="promo flex">
+			<section class="promo">
+				<!-- promo-container starts-->
+				<div class="promo-container flex"> 
 					<h2 class="visually-hidden">Промоакции</h2>
 					<div class="promo-item flex-column">
 						<h3 class="promo-item-title">Малинка даром!</h3>
@@ -170,9 +176,12 @@
 						</p>
 						<a class="button" href="#" title="Получить упаковку шоколадной присыпки">Хочу шоколадки!</a>
 					</div>
-				</section>
+				</div>
+			</section>
 
-				<section class="catalog">
+			<section class="catalog">
+				<!-- catalog-container starts-->
+				<div class="catalog-container"> 
 					<h2 class="visually-hidden">Хиты продаж</h2>
 					<ul class="catalog-list flex">
 
@@ -191,7 +200,7 @@
 		            <a href="catalog.html">Сливочное с апельсиновым джемом и цитрусовой стружкой
 		            </a>
 		          </h3>
-		          <a class="modal-opener button visually-hidden" href="#" title="На весь экран">Быстрый просмотр</a>
+		          <a class="modal-opener button" href="#" title="На весь экран">Быстрый просмотр</a>
 		        </li>
 
 						<li class= "catalog-item flex-column">
@@ -208,7 +217,7 @@
 		          <h3 class="catalog-item-title">
 		            <a href="catalog.html">Сливочно-кофейное с кусочками шоколада</a>
 		          </h3>
-		          <a class="modal-opener button visually-hidden" href="#" title="На весь экран">Быстрый просмотр</a>
+		          <a class="modal-opener button" href="#" title="На весь экран">Быстрый просмотр</a>
 		        </li>
 
 						<li class= "catalog-item flex-column">
@@ -225,7 +234,7 @@
 		          <h3 class="catalog-item-title">
 		            <a href="catalog.html">Сливочно-клубничное с присыпкой из белого шоколада</a>
 		          </h3>
-		          <a class="modal-opener button visually-hidden" href="#" title="На весь экран">Быстрый просмотр</a>
+		          <a class="modal-opener button" href="#" title="На весь экран">Быстрый просмотр</a>
 		        </li>
 
 		        <li class= "catalog-item flex-column">
@@ -242,13 +251,15 @@
 		          <h3 class="catalog-item-title">
 		            <a href="catalog.html">Сливочное крем-брюле с карамельной подливкой</a>
 		          </h3>
-		          <a class="modal-opener button visually-hidden" href="#" title="На весь экран">Быстрый просмотр</a>
+		          <a class="modal-opener button" href="#" title="На весь экран">Быстрый просмотр</a>
 		        </li>
-
 	        </ul>
-				</section>
-
-				<section class="advantages">
+      	</div>
+			</section>
+		
+			<section class="advantages">
+				<!-- advantages-container starts-->
+				<div class="advantages-container">
 					<h2 class="visually-hidden">Преимущества магазина «Глэйси»</h2>
 					<p class="advantages-lead">Магазин Глэйси <span>–</span>это онлайн- и офлайн-магазин по продаже мороженого собственного<br> производства на развес</p>
 					<ul class="advantages-list flex">
@@ -286,15 +297,19 @@
 							 </p>
 						</li>
 					</ul>
-				</section>
+				</div>
+			</section>
 
-				<div class="flex">
+			<section class="updates">
+				<!-- updates-container starts-->
+				<div class="updates-container flex">
+
 					<article class="blog flex-column" aria-label="Блог «Глэйси»">
 						<h2 class="blog-title">Новое в нашем блоге</h2>
 						<h3 class="blog-article-title"><a href="#" title="Перейти в блог «Глэйси»">10 способов сервировки фруктовых щербетов к столу</a></h3>
 					</article>
 
-					<section class="sign-up flex">
+					<div class="sign-up flex">
 						<div class="sign-up-bg flex-column">
 							<h2 class="visually-hidden">Подписка на рассылку</h2>
 							<p class="sign-up-text">
@@ -307,30 +322,37 @@
 								<input class="button" type="submit" value="Отправить">
 							</form>
 						</div>
-					</section>
-				</div>
+					</div>
 
-		</div> <!-- container ends  -->
+				</div>
+			</section>
 
 			<section class="address">
-				<div class="address-info flex-column">
-					<h2 class="address-info-title">Адрес главного офиса
-						и офлайн-магазина:</h2>
-					<p class="address-info-text">ул. Большая Конюшенная 19/8, Санкт-Петербург</p>
-					<h3 class="address-info-subtitle">Для заказов по телефону:</h3>
-					<p class="address-info-tel">8 812 450-25-25</p>
-					<span>(c 10 до 20 ежедневно)</span>
-					<a href="#modal-callback" class="modal-opener button">Форма обратной связи</a>
-				</div>
-				<div class="map-frame">
-					<img src="img/map.jpg" alt="«Глэйси» на карте" width="1200" height="430">
+				<!-- address-container starts-->
+				<div class="address-container flex">
+
+					<div class="address-info flex-column">
+						<h2 class="address-info-title">Адрес главного офиса
+							и офлайн-магазина:</h2>
+						<p class="address-info-text">ул. Большая Конюшенная 19/8, Санкт-Петербург</p>
+						<h3 class="address-info-subtitle">Для заказов по телефону:</h3>
+						<p class="address-info-tel">8 812 450-25-25</p>
+						<span>(c 10 до 20 ежедневно)</span>
+						<a href="#modal-callback" class="modal-opener button">Форма обратной связи</a>
+					</div>
+					<div class="map-frame">
+						<img src="img/map.jpg" alt="«Глэйси» на карте" width="1200" height="430">
+					</div>
+
 				</div>	
 			</section>
 	
 		</main>
 
 		<footer class="page-footer">
-			<div class="container flex-center">
+			<!-- page-footer-container starts-->
+			<div class="page-footer-container flex-center">
+
 				<ul class="socials-list flex">
 					<li class="socials-items"><a href="https://twitter.com" target="_blank" aria-label="«Глэйси» в Twitter"><img src="img/twitter.svg" width="32" height="32" alt="Twitter"></a></li>
 					<li class="socials-items"><a href="https://instagram.com" target="_blank" aria-label="«Глэйси» в Instagram"><img src="img/instagram.svg" width="32" height="32" alt="Instagram"></a></li>
@@ -357,12 +379,11 @@
 					<p>Сделано в <a class="link" href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">HTML Academy</a> &#169; 2018</p>
 				</div>
 
-			</div> <!-- container ends  -->
+			</div>
 		</footer>
 
-		<!-- Форма модал -->
 		<section class="modal-callback overlay visually-hidden" id="modal-callback">
-			<div class="modal-callback-wrap flex-column">
+			<div class="modal-callback-container flex-column">
 				<h2 class="visually-hidden">Форма обратной связи</h2>
 				<p class="callback-title">Мы обязательно вам ответим!</p>
 				<form class="callback-form flex-column"> 
