@@ -44,10 +44,7 @@ a {
   height: 1px;
   margin: -1px;
 }
-.container {
-  width: 1146px;
-  margin: 0 auto;
-}
+
 .flex {
   display: flex;
 }
@@ -127,19 +124,19 @@ a {
   content: '';
   display: block;
   width: 100%;
-  height: 1px;
 
   position: absolute;
-  bottom: 0px;
+  left: 0;
+  bottom: 0;
 
-  background-color: rgba(255,255,255, 0.3);
+  border-bottom: 0.5px solid rgba(255,255,255, 0.3);
 }
 .link:hover {
   color: rgba(255,188,158, 1);
 }
 .link:hover::after,
 .link:active::after {
-  background-color: rgba(255,188,158, 0.3);
+  border-bottom-color: rgba(255,188,158, 0.3);
 }
 
 /* toggle для hover*/
@@ -183,7 +180,9 @@ a {
 }
 
 /* header */
-.page-header .container {
+.page-header-container {
+  width: 1146px;
+  margin: 0 auto;
   padding-top: 9px;
   position: relative;
 }
@@ -210,8 +209,8 @@ a {
 .site-navigation {
 	align-items: baseline;
   width: 500px;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 
   font-family: "Roboto Bold", Arial, sans-serif;
   font-size: 16px;
@@ -232,14 +231,17 @@ a {
 .site-navigation-item:first-of-type .link::after {
   width: 70%;
   bottom: 8px;
+  left: 14px;
 }
 .site-navigation-item:nth-of-type(2) .link::after {
   width: 85%;
   bottom: 8px;
+  left: 14px;
 }
 .site-navigation-item:last-of-type .link::after  {
   width: 78%;
-  bottom: 8px;  
+  bottom: 8px; 
+  left: 14px; 
 }
 .site-navigation-item:hover .link:hover::after {
   opacity: 0;
@@ -346,8 +348,8 @@ a.onpage  {
 
 /* Поиск */
 .search-block {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   margin-right: 2px;
   list-style: none;
 }
@@ -387,8 +389,8 @@ a.onpage  {
 
 /* Вход */
 .login-block {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
  
   list-style: none;
   color: #fff;
@@ -454,8 +456,8 @@ a.onpage  {
 
 /* корзина */
 .cart-block {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 .cart-block .toggle {
@@ -496,7 +498,7 @@ a.onpage  {
 }
 .cart-form-table {
   caption-side: bottom;
-
+  margin: 0;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 13px;
   line-height: 16px; 
@@ -531,6 +533,8 @@ a.onpage  {
 }
 .cart-form .button {
   align-self: flex-end;
+  padding: 7px 15px 11px;
+  border-radius: 20px;
 }
 
 /* контакты */
@@ -541,7 +545,7 @@ a.onpage  {
   text-align: right;
 }
 .header-contacts p {
-  margin: 0px;
+  margin: 0;
   margin-bottom: 5px;
 
   font-family: "Roboto Bold", Arial, sans-serif;
@@ -556,8 +560,12 @@ a.onpage  {
 }
 
 /* слайдер */
+.product-slides-container {
+  width: 1146px;
+  margin: 0 auto;
+}
 .product-slides-list {
-  margin: 0px;
+  margin: 0;
   position: relative;
   text-align: center;
   list-style: none;
@@ -619,9 +627,11 @@ a.onpage  {
 }
 
 /* promo */
-.promo {
+.promo-container {
   justify-content: space-between;
-  margin-bottom: 38px;
+  width: 1146px;
+  margin: 0 auto;
+  margin-bottom: 32px;
 }
 .promo-item {
   width: 560px;
@@ -652,7 +662,7 @@ a.onpage  {
   background-size: 115%;
 }
 .promo-item-title {
-  margin: 0px;
+  margin: 0;
   font-size: 35px;
   line-height: 41px;
 }
@@ -665,9 +675,6 @@ a.onpage  {
 
 /* хиты */
 .catalog {
-	/*min-height: 405px;*/
-	margin-bottom: 22px;
-
   text-align: center;
   font-family: "Roboto Medium", Arial, sans-serif;
   font-size: 16px;
@@ -675,22 +682,46 @@ a.onpage  {
   font-weight: 500;
   color: #ffffff;
 }
+.catalog-container {
+  width: 1172px;
+  margin: 0 auto;
+  margin-bottom: 6px;
+}
+.inner-page .catalog-container {
+  margin-bottom: 29px;
+}
 .catalog-list  {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0px;
-  margin-bottom: 0px;
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
+.inner-page .catalog-list {
+  margin-bottom: 50px;
+}
 .catalog-item {
-  width: 267px;
- /* min-height: 405px;*/
+  width: 293px;
+  min-height: 405px;
+  padding: 0 13px;
+  margin-bottom: -43px;
   box-sizing: border-box;
 
   position: relative;
+
+  border-radius: 5px;
+}
+.catalog-item:hover {
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);  
+}
+.catalog-item:hover .button {
+  opacity: 1;
 }
 .catalog-item-image {
+  padding-top: 6px;
   position: relative;
 }
 .catalog-item-image img {
@@ -698,14 +729,14 @@ a.onpage  {
 }
 .hit {
   position: absolute;
-  top: 0px;
+  top: 6px;
   left: 0px;
 }
 .catalog-item-price {
 	align-items: baseline;
-  margin: 0px;
+  margin: 0;
   position: absolute;
-  top: 208px;
+  top: 214px;
 
   font-family: "Roboto Bold", Arial, sans-serif;
   font-size: 45px;
@@ -719,10 +750,6 @@ a.onpage  {
 	top: 4px;
 	left: 2px;
 }
-
-.inner-page .catalog-item-price {
-  top: 210px;
-}
 .catalog-item-price span {
   margin-left: 3px;
   font-size: 30px;
@@ -730,19 +757,32 @@ a.onpage  {
 .catalog-item-title {
   font-size: 16px;
   margin-top: 8px;
+  margin-bottom: 10px;
 }
 .catalog-item-title a {
   text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255, 0.3);
+}
+.catalog-item-title a:hover,
+.catalog-item-title a:focus,
+.catalog-item-title a:active {
+  color: rgba(255,188,158, 1);
+  border-bottom-color: rgba(255,188,158, 0.3);
 }
 .catalog-item .button {
   align-self: center;
+  padding: 8px 16px;
+  opacity: 0;
+  z-index: 1;
 }
 
 /* преимущества */
-.advantages {
+.advantages-container {
   width: 1146px;
   min-height: 306px;
   padding: 24px 20px 3px 20px;
+  margin: 0 auto;
+  margin-bottom: 40px;
   box-sizing: border-box;
 
   background-image: url("../img/waffle.jpg");
@@ -766,8 +806,7 @@ a.onpage  {
 .advantages-list {
   flex-wrap: wrap;
   padding: 0;
-  margin: 0px;
-  margin-top: 6px;
+  margin: 0;
   list-style: none;
 }
 .advantages-item {
@@ -779,7 +818,7 @@ a.onpage  {
 }
 .advantages-item-title {
 	display: inline-block;
-  margin: 0px;
+  margin: 0;
   margin-right: 6px;
 
   position: relative;
@@ -790,16 +829,20 @@ a.onpage  {
 }
 .advantages-item-text {
 	display: inline-block;
-  margin: 0px;
+  margin: 0;
 }
 
-
+/* updates */
+.updates-container {
+  justify-content: space-between;
+  width: 1146px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
 /* блог */
 .blog {
   width: 560px;
   padding: 22px 19px;
-  margin: 40px 0px;
-  margin-right: 26px;
   box-sizing: border-box;
 
   background-image: url("../img/blog.jpg");
@@ -819,7 +862,7 @@ a.onpage  {
 }
 .blog-article-title {
 	width: 55%;
-  margin: 0px;
+  margin: 0;
   margin-top: 4px;
   box-sizing: border-box;
 
@@ -835,14 +878,13 @@ a.onpage  {
 .blog-article-title a:hover,
 .blog-article-title a:focus,
 .blog-article-title a:active {
-  color: #e84d37;
+  color: rgba(232,77,55, 1);
 }
 
 /* подписка */
 .sign-up {
   width: 560px;
   height: 220px;
-  margin: 40px 0px;
   padding: 5px;
   box-sizing: border-box;
 
@@ -883,7 +925,7 @@ a.onpage  {
 }
 .sign-up-text {
 	width: 99%;
-  margin: 0px;
+  margin: 0;
   margin-bottom: 35px;
 }
 .sign-up-form .form-input {
@@ -894,8 +936,8 @@ a.onpage  {
 	padding: 8px 19px 11px 20px;
 }
 
-/* карта */
-.address {
+/* address */
+.address-container {
   width: 1200px;
   min-height: 305px;
   margin: 0 auto;
@@ -924,7 +966,7 @@ a.onpage  {
 }
 .address-info-title {
 	width: 60%;
-  margin: 0px;
+  margin: 0;
 	margin-bottom: 1px;
   font: inherit;
   line-height: 20px;
@@ -939,7 +981,7 @@ a.onpage  {
   font-weight: 700;
 }
 .address-info-subtitle {
-  margin: 0px;
+  margin: 0;
   margin-bottom: 4px;
   font: inherit;
   line-height: 20px;
@@ -961,18 +1003,21 @@ a.onpage  {
 }
 
 /* footer */
-.inner-page .page-footer .container {
-  border-top: 1px solid rgba(255,255,255, 0.2);
-}
-.page-footer .container {
+.page-footer-container {
   justify-content: space-between;
+  width: 1146px;
   min-height: 105px;
+  margin: 0 auto;
 
   font-family: "Roboto", Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
   color: #ffffff;
+}
+.inner-page .page-footer-container {
+  padding-top: 7px;
+  border-top: 1px solid rgba(255,255,255, 0.2);
 }
 .socials-list,
 .footer-info-prod,
@@ -1014,9 +1059,15 @@ a.onpage  {
   font-size: 12px;
 }
 .footer-copyright p {
-  margin: 0px;
+  margin: 0;
 }
-
+.inner-page .footer-copyright p {
+  margin: 0;
+  margin-top: 5px;
+}
+.footer-copyright a {
+  text-decoration: none;
+}
 /* socials */
 .socials-items {
   margin-left: 18px;
@@ -1059,7 +1110,7 @@ a.onpage  {
 
   background-color: rgba(0,0,0, 0.5);
 }
-.modal-callback-wrap {
+.modal-callback-container {
   width: 478px;
   height: 443px;
   padding: 17px 24px;
@@ -1108,8 +1159,21 @@ a.onpage  {
   font-weight: 500;
   color: #ffffff;
 }
-.page-title {
-  margin: 10px 0px 30px;
+.inner-page .page-header-container {
+  margin-bottom: 25px;
+}
+.main-top-container {
+  width: 1146px;
+  margin: 0 auto;
+}
+.main-bottom-container {
+  width: 1146px;
+  margin: 0 auto;
+  margin-bottom: 27px;
+}
+.inner-page .page-title {
+  margin: 0;
+  margin-bottom: 23px;
 
   font-family: "Roboto Bold", Arial, sans-serif;
   font-size: 35px;
@@ -1118,9 +1182,9 @@ a.onpage  {
 }
 /* breadcrumbs */
 .breadcrumbs {
-  padding: 0px;
-  margin: 0px;
-  margin-top: 28px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2px;
   list-style: none;
   
   font-family: "Roboto", Arial, sans-serif;
@@ -1131,25 +1195,38 @@ a.onpage  {
 .breadcrumbs-item {
   margin-right: 5px;
 }
-
+.breadcrumbs-item .link {
+  margin-right: 7px;
+}
 /* фильтры */
 .filters {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 .filters-form {
+  padding-top: 6px;
+
   font-family: "Roboto Medium", Arial, sans-serif;
   font-size: 14px;
   line-height: 16px;
   font-weight: 500;
   color: #ffffff;
 }
+.filters-form-row {
+  justify-content: flex-start;
+  margin-bottom: 17px;
+}
+.filters-form-row:last-of-type {
+  margin-bottom: 0;
+}
 .filters-form fieldset {
-  padding-left: 0px;
+  padding: 0;
+  margin: 0;
+  margin-right: 14px;
   position: relative;
   border: none;
 }
 .filter-title {
-  margin-bottom: 10px;
+  margin: 0px 0px 5px 15px;
 }
 .filter-layout {
   height: 37px;
@@ -1175,8 +1252,7 @@ a.onpage  {
 }
 .filter-sorting select { 
   width: 100%;
-  padding: 0px 10px 10px 16px;
-  margin-top: 6px;
+  padding-left: 11px;
 
   z-index: 1;
 
@@ -1191,9 +1267,11 @@ a.onpage  {
 label[for="sorting"] {
   width: 0px;
   height: 0px;
-  margin-left: -20px;
-  margin-top: 2px;
   
+  position: relative;
+  top: 3px;
+  right: 16px;
+
   border: 5px solid #ffffff;
   border-top: 9px solid #ffffff;
   border-right-color: transparent;
@@ -1209,9 +1287,6 @@ label[for="sorting"] {
   width: 220px;
   box-sizing: border-box;
   padding: 17px 22px;
-}
-.filter-price label {
-  margin-left: 20px;
 }
 .filter-price output {
   width: 20px;
@@ -1308,14 +1383,14 @@ input[type=range] {
 }
 [type='range'].second {
   position: absolute;
-  top: 0.41em;
+  top: 0.43em;
   left: 6.5em;
   margin-left: 0;
 }
 
 /* переключатели и чекбоксы на css */
 .filter-fatness .filter-layout {
-  width: 415px;
+  min-width: 415px;
 }
 .filter-inner {
   padding-bottom: 0px;
@@ -1323,14 +1398,26 @@ input[type=range] {
 .filter-inner .filter-layout {
   width: 703px;
 }
-
 input[type="checkbox"] + label,
 input[type="radio"] + label {
-  margin-left: 16px;
-  margin-right: 8px;
-  position: relative;
   display: flex;
   align-items: center;
+  margin-right: 19px;
+  position: relative;
+}
+input[type="radio"] + label {
+  margin-right: 22px;
+}
+input[type="checkbox"] + label {
+  margin-right: 19px;
+}
+input[type="checkbox"]:first-of-type + label,
+input[type="radio"]:first-of-type + label {
+  margin-left: 16px;
+}
+input[type="checkbox"]:last-of-type + label,
+input[type="radio"]:last-of-type + label {
+  margin-right: 0;
 }
 
 /* переключатели */
@@ -1338,13 +1425,13 @@ input[type="radio"] + label::before {
   content: "";
   display: flex;
   align-items: center;
-  width: 10px;
-  height: 10px;
-  margin-right: 10px;
+  width: 15px;
+  height: 15px;
+  margin-right: 13px;
   border-radius: 2em;
   vertical-align: middle;
   background-color: #aabcb2;
-  border: 3px solid #aabcb2;
+  border: 4px solid #aabcb2;
   box-shadow: 0 0 0 3px #e4eae6;
   box-sizing: border-box;
  }
@@ -1370,7 +1457,7 @@ input[type="checkbox"] + label::before {
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin-right: 10px;
+  margin-right: 13px;
   vertical-align: middle;
   border: 2px solid #e6ebe9;
   box-sizing: border-box;
@@ -1403,9 +1490,9 @@ input[type="checkbox"]:disabled + label::before {
 /* кнопка применить */
 .button-submit {
   align-self: flex-end;
-  width: 145px;
+  width: 142px;
   height: 37px;
-  padding: 10px 30px;
+  padding: 5px 25px;
 
   font-family: "Roboto Medium", Arial, sans-serif;
   font-size: 16px;
@@ -1436,19 +1523,26 @@ input, select, option {
 
 /* pagination */
 .pagination-list {
-  padding: 0px;
-  margin: 0px;
-  margin-bottom: 30px;
+  padding: 0;
+  margin: 0;
+  margin-right: 4px;
   list-style: none;
+
+  font-size: 16px;
+  line-height: 18px;
 }
 .pagination-item {
-  margin: 3px;
+  margin-left: 3px;
+}
+.pagination-item-next {
+  margin-left: 10px;
 }
 .pagination-list a {
   display: inline-block;
-  width: 13px;
+  width: 26px;
   padding: 6px;
-  line-height: 13px;
+  box-sizing: border-box;
+  line-height: 14px;
   text-decoration: none;
   color: #ffffff;
   border-radius: 50%;
