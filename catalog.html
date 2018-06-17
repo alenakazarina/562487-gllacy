@@ -23,7 +23,7 @@
 
 						<ul class="site-navigation flex-center">
 						  <li class="site-navigation-item toggle flex-column">   
-						    <a class="site-navigation-link link onpage">Каталог</a>
+						    <a class="site-navigation-link onpage">Каталог</a>
 
 						    <ul class="dropdown-menu flex-column visually-hidden" aria-label="Каталог меню">
 						      <li class="dropdown-menu-item"> 
@@ -40,10 +40,10 @@
 							</li>
 		  
 							<li class="site-navigation-item flex-column">
-						  	<a href="#" class="site-navigation-link link">Доставка и оплата</a>
+						  	<a href="#" class="site-navigation-link">Доставка и оплата</a>
 						  </li>   
 							<li class="site-navigation-item flex-column">
-								<a href="#" class="site-navigation-link link">О компании</a>
+								<a href="#" class="site-navigation-link">О компании</a>
 						  </li>     
 						</ul>
 					</div>		
@@ -100,27 +100,22 @@
 							<li class="toggle flex-column">
 						    <a href="#cart-form" class="opener">
 						      <span>2 товара</span>
-						    </a>
-						  	
+						    </a> 	
 						  	<div class="cart-form-wrap visually-hidden">
 							    <form class="cart-form flex-column" id="cart-form">
-					          <table class="cart-form-table">
-					            <caption>Итого: 750 руб.</caption>
-					            <tr>
-					              <td><input type="image" class="cart-cross" src="img/cross-small.svg" alt="Удалить из корзины" width="11" height="11"></td>
-					              <td><img src="img/item-1-sm.jpg" alt="" width="33" height="33"></td>
-					              <td>Пломбир с апельсиновым джемом </td>
-					              <td>1,5кг х <span>200 руб.</span></td>
-					              <td>300 руб.</td>
-					            </tr>
-					            <tr>
-					              <td><input type="image" class="cart-cross" src="img/cross-small.svg" alt="Удалить из корзины" width="11" height="11"></td>
-					              <td><img src="img/item-3-sm.jpg" alt="" width="33" height="33"></td>
-					              <td>Клубничный пломбир с присыпкой из белого шоколада</td>
-					              <td>1,5кг х <span>300 руб.</span></td>
-					              <td>450 руб.</td>
-					            </tr>
-					          </table>
+										<div class="cart-form-item flex-center">
+											<input type="image" class="cart-cross" src="img/cross-small.svg" alt="Удалить из корзины" width="11" height="11">
+							        <img src="img/item-1-sm.jpg" alt="" width="33" height="33">
+							        <p class="item-name">Пломбир с апельсиновым джемом </p>
+							        <p class="item-value">1,5 кг х<span>200 руб.</span> 300 руб.</p>
+										</div>
+										<div class="cart-form-item flex-center">
+											<input type="image" class="cart-cross" src="img/cross-small.svg" alt="Удалить из корзины" width="11" height="11">
+							        <img src="img/item-1-sm.jpg" alt="" width="33" height="33">
+							        <p class="item-name">Клубничный пломбир с присыпкой из белого шоколада </p>
+							        <p class="item-value">1,5 кг х<span>300 руб.</span> 450 руб.</p>
+										</div>
+										<p class="cart-form-result">Итого: 750 руб.</p>
 				          	<input type="submit" value="Оформить заказ" class="button">
 				        	</form>
 			        	</div>
