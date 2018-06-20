@@ -23,9 +23,9 @@
 
 						<ul class="site-navigation flex-center">
 						  <li class="site-navigation-item toggle flex-column">   
-						    <a class="site-navigation-link onpage">Каталог</a>
+						    <a class="site-navigation-link onpage" id="dropdown-menu-toggle" href="#">Каталог</a>
 
-						    <ul class="dropdown-menu flex-column visually-hidden" aria-label="Каталог меню">
+						    <ul class="dropdown-menu flex-column visually-hidden" id="dropdown-menu" aria-label="Каталог меню">
 						      <li class="dropdown-menu-item"> 
 						        <a href="#">Новинки</a></li>
 									<li class="dropdown-menu-item">
@@ -43,7 +43,7 @@
 						  	<a href="#" class="site-navigation-link">Доставка и оплата</a>
 						  </li>   
 							<li class="site-navigation-item flex-column">
-								<a href="#" class="site-navigation-link">О компании</a>
+								<a href="#" class="site-navigation-link">О Компании</a>
 						  </li>     
 						</ul>
 					</div>		
@@ -52,18 +52,13 @@
 						<ul class="search-block">
 							<li class="toggle flex-column">
 						    
-						    <a class="opener " href="#modal-search">
-						    	<img class="image" src="img/search.svg" alt="Поиск по сайту" width="17" height="17">	
-						      <img class="image-hover" src="img/search-black.svg" alt="Поиск по сайту" width="17" height="17">
-						    </a>
+						   	<button type="button" class="opener flex-center" id="search-toggle">									
+									<svg class="image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17"><path fill="#fff" d="M16.958 15.527L11.75 10.32A6.455 6.455 0 0 0 13 6.5 6.5 6.5 0 1 0 6.5 13a6.465 6.465 0 0 0 3.839-1.263l5.205 5.204 1.414-1.414zM6.5 11C4.019 11 2 8.981 2 6.5S4.019 2 6.5 2 11 4.019 11 6.5 8.981 11 6.5 11z"/></svg>
+						    </button>
 						    
-						    <ul class="modal-search visually-hidden" id="modal-search">
-						     <li>
-						      <form class="search-form" method="get" action="https://echo.htmlacademy.ru">
-						       <input class="form-input" type="search" name="search" placeholder="Что ищем?">
-						      </form>
-						     </li>   
-						    </ul>
+						    <form class="search-form visually-hidden" id="search-form" method="get" action="https://echo.htmlacademy.ru">
+					       	<input class="form-input" type="search" name="search" placeholder="Что ищем?">
+					      </form>
 
 						  </li>
 						</ul>
@@ -71,54 +66,49 @@
 						<ul class="login-block">
 							<li class="toggle">
 								
-								<a href="#login-form" class="opener">
-						    	<img class="image" src="img/login.svg" alt="Войти" width="21" height="19">	
-						      <img class="image-hover" src="img/login-black.svg" alt="Войти"  width="21" height="19">
+								<button type="button" class="opener flex-center" id="login-toggle">
+									<svg class="image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="19" viewBox="0 0 21 19"><g fill="#fff"><path d="M6 14.875L12.917 9.5 6 4.125v2.917H-.042v4.917H6z"/><path d="M18 0H5C3.9 0 3 .9 3 2v2h2V2h13v15H5v-2H3v2c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2z"/></g></svg>
 						      <span>Вход</span>
-						    </a>
+						    </button>
 					     
-								<ul class="login-form visually-hidden" id="login-form">
-						      <li>
-						        <form class="flex-column" method="post" action="https://echo.htmlacademy.ru">
-						          <input class="form-input" type="email" name="user-email" placeholder="Электронная почта">
-								      <input class="form-input" type="password" name="password" placeholder="Пароль">
-						          <div class="login-form-bottom flex">
-								        <input type="submit" class="button" value="Войти">
-						            <div class="login-form-bottom-links flex-column">
-						              <a href="#">Забыли пароль?</a>
-						              <a href="#">Новая регистрация</a>
-						            </div>
-						          </div>
-						         </form>
-						       </li> 
-						     </ul> 
+								 <form class="login-form flex-column visually-hidden" id="login-form" method="post" action="https://echo.htmlacademy.ru">
+				          <input class="form-input" type="email" name="user-email" placeholder="Электронная почта">
+						      <input class="form-input" type="password" name="password" placeholder="Пароль">
+				          <div class="login-form-bottom flex">
+						        <input type="submit" class="button" value="Войти">
+				            <div class="login-form-bottom-links flex-column">
+				              <a href="#">Забыли пароль?</a>
+				              <a href="#">Новая регистрация</a>
+				            </div>
+				          </div>
+				         </form>
 
 							</li>
 		  			</ul>
 
 						<ul class="cart-block">
 							<li class="toggle flex-column">
-						    <a href="#cart-form" class="opener">
+						    <button type="button" class="opener" id="cart-toggle">
 						      <span>2 товара</span>
-						    </a> 	
-						  	<div class="cart-form-wrap visually-hidden">
-							    <form class="cart-form flex-column" id="cart-form">
-										<div class="cart-form-item flex-center">
-											<input type="image" class="cart-cross" src="img/cross-small.svg" alt="Удалить из корзины" width="11" height="11">
-							        <img src="img/item-1-sm.jpg" alt="" width="33" height="33">
-							        <p class="item-name">Пломбир с апельсиновым джемом </p>
-							        <p class="item-value">1,5 кг х<span>200 руб.</span> 300 руб.</p>
-										</div>
-										<div class="cart-form-item flex-center">
-											<input type="image" class="cart-cross" src="img/cross-small.svg" alt="Удалить из корзины" width="11" height="11">
-							        <img src="img/item-1-sm.jpg" alt="" width="33" height="33">
-							        <p class="item-name">Клубничный пломбир с присыпкой из белого шоколада </p>
-							        <p class="item-value">1,5 кг х<span>300 руб.</span> 450 руб.</p>
-										</div>
-										<p class="cart-form-result">Итого: 750 руб.</p>
-				          	<input type="submit" value="Оформить заказ" class="button">
-				        	</form>
-			        	</div>
+						    </button> 	
+					
+						    <form class="cart-form flex-column visually-hidden" id="cart-form">
+									<div class="cart-form-item flex-center">
+										<input type="image" class="cart-cross" src="img/cross-small.svg" alt="Удалить из корзины" width="11" height="11">
+						        <img src="img/item-1-sm.jpg" alt="" width="33" height="33">
+						        <p class="item-name">Пломбир с апельсиновым джемом </p>
+						        <p class="item-value">1,5 кг х<span>200 руб.</span> 300 руб.</p>
+									</div>
+									<div class="cart-form-item flex-center">
+										<input type="image" class="cart-cross" src="img/cross-small.svg" alt="Удалить из корзины" width="11" height="11">
+						        <img src="img/item-3-sm.jpg" alt="" width="33" height="33">
+						        <p class="item-name">Клубничный пломбир с присыпкой из белого шоколада </p>
+						        <p class="item-value">1,5 кг х<span>300 руб.</span> 450 руб.</p>
+									</div>
+									<p class="cart-form-result">Итого: 750 руб.</p>
+			          	<input type="submit" value="Оформить заказ" class="button">
+			        	</form>
+			        
 			        </li>
 						</ul>
 					</div>
@@ -126,7 +116,7 @@
 
 	  		<section class="header-contacts">
 	  			<h2 class="visually-hidden">Телефон и время работы</h2>
-	  			<p>C 10 до 20, ежедневно<br>
+	  			<p>C 10 до 20, ежедневно</p>
 	  			<p class="tel">8 812 450-25-25</p>
 	  		</section>
 
@@ -146,7 +136,7 @@
 
 				<section class="filters">
 					<h2 class="visually-hidden">Фильтр товаров</h2>
-					<form class="filters-form flex-column" method="get" action="https://echo.htmlacademy.ru" oninput="outputRange()">
+					<form class="filters-form flex-column" method="get" action="https://echo.htmlacademy.ru">
 				    
 				     <div class="filters-form-row flex-center">
 
@@ -166,8 +156,8 @@
 				       <fieldset class="filter-price flex-column">
 				        <legend class="filter-title">Цена: 100 руб. – 500 руб.</legend>
 				        <div class="filter-layout flex-center">
-				          <input class="first rotate" type="range" min="0" max="240" step="10" value="50" style="--min: 0; --max: 240; --val: 50;"/>
-				          <input class="second" type="range" min="0" max="250" value="50" step="10" style="--min: 0; --max: 250; --val: 50;"/>
+				          <input class="first" type="range" min="0" max="250" step="10" value="50">
+				          <input class="second" type="range" min="0" max="250" value="50" step="10">
 				        </div>
 				       </fieldset>
 
@@ -284,7 +274,7 @@
 			            325<img src="img/rub.svg" alt="Рублей" width="31" height="36"><span>/кг</span>
 			          </p>
 			          <h3 class="catalog-item-title">
-			            <a href="#">Сливочное с брусничным <br> джемом</a>
+			            <a href="#">Сливочное с брусничным джемом</a>
 			          </h3>
 			          <a class="modal-opener button" href="#" title="На весь экран">Быстрый просмотр</a>
 							</li>
@@ -329,7 +319,7 @@
 			            320<img src="img/rub.svg" alt="Рублей" width="31" height="36"><span>/кг</span>
 			          </p>
 			          <h3 class="catalog-item-title">
-			            <a href="#">Сливочное с шоколадной <br>стружкой</a>
+			            <a href="#">Сливочное с шоколадной стружкой</a>
 			          </h3>
 			          <a class="modal-opener button" href="#" title="На весь экран">Быстрый просмотр</a>
 							</li>
@@ -359,7 +349,7 @@
 			            435<img src="img/rub.svg" alt="Рублей" width="31" height="36"><span>/кг</span>
 			          </p>
 			          <h3 class="catalog-item-title">
-			            <a href="#">Сливочное с ментоловым <br>сиропом</a>
+			            <a href="#">Сливочное с ментоловым сиропом</a>
 			          </h3>
 			          <a class="modal-opener button" href="#" title="На весь экран">Быстрый просмотр</a>
 							</li>
@@ -396,19 +386,13 @@
 						</ul>
 						
 						<ul class="pagination-list flex-center-end" aria-label="Каталог пагинация">
-							<li class="pagination-item-prev rotate">
-								<a href="#">
-									<img class="image" src="img/icon-right.svg" width="8" height="12" alt="На предыдущую страницу">
-								</a>
-							</li>
-		          <li class="pagination-item pagination-item-current"><a>1</a></li>
-		          <li class="pagination-item"><a href="#">2</a></li>
-		          <li class="pagination-item"><a href="#">3</a></li>
-		          <li class="pagination-item"><a href="#">4</a></li>
-		          <li class="pagination-item"><a href="#">5</a></li>
-		          <li class="pagination-item-next">
-		          	<a href="#"><img src="img/icon-right-white.svg" width="8" height="12" alt="На следующую страницу"></a>
-			      	</li>
+							<li><a class="pagination-prev pagination-arrow"><span class="visually-hidden">Назад</span></a></li>
+		          <li><a class="pagination-item current">1</a></li>
+		          <li><a class="pagination-item" href="#">2</a></li>
+		          <li><a class="pagination-item" href="#">3</a></li>
+		          <li><a class="pagination-item" href="#">4</a></li>
+		          <li><a class="pagination-item" href="#">5</a></li>
+		          <li><a class="pagination-next pagination-arrow active" href="#"><span class="visually-hidden">Вперёд</span></a></li>
 		        </ul>
 					</div>
 				</section>
@@ -428,9 +412,7 @@
 
 				<div class="footer-info flex">
 					<ul class="footer-info-prod">
-						<li class="footer-info-supply">
-							<img src="img/heart.svg" alt="Мы любим наших партнёров" width="15" height="13"><a class="link" href="#">Для поставщиков</a>
-						</li>
+						<li class="footer-info-supply"><a class="link" href="#">Для поставщиков</a></li>
 						<li><a class="link" href="#">О производстве</a></li>
 					</ul>
 					<ul class="footer-info-docs">
@@ -440,7 +422,7 @@
 				</div>
 
 				<div class="footer-copyright flex-column">
-					<img src="img/logo-htmlacademy.svg" alt="HTML Academy" width="108" height="37">
+					<a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank"><img src="img/logo-htmlacademy.svg" alt="HTML Academy" width="108" height="37"></a> 
 					<p>Сделано в <a class="link" href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">HTML Academy</a> &#169; 2018</p>
 				</div>
 			
