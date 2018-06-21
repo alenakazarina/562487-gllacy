@@ -216,7 +216,7 @@ img {
   cursor: pointer;
 }
 .site-navigation-item.toggle:hover .visually-hidden {
-  clip: unset;
+  clip: auto;
   opacity: 1;
 }
 .site-navigation-link {
@@ -346,8 +346,6 @@ a.onpage  {
 }
 .search-block .toggle:hover .search-form {
   clip: auto;
-  width: auto;
-  height: auto;
   opacity: 1;
 }
 .search-block .toggle:hover .image path,
@@ -370,6 +368,7 @@ a.onpage  {
 }
 .search-form {
   min-width: 341px;
+  min-height: 84px;
   padding: 20px 15px;
 
   position: absolute;
@@ -407,7 +406,7 @@ a.onpage  {
   cursor: pointer;
 }
 .login-block .toggle:hover .visually-hidden {
-  clip: unset;
+  clip: auto;
   opacity: 1;
 }
 .login-block .toggle:hover .image path,
@@ -499,7 +498,7 @@ a.onpage  {
   cursor: pointer;
 }
 .cart-block .toggle:hover .visually-hidden {
-  clip: unset;
+  clip: auto;
   opacity: 1;
 }
 .cart-block .toggle:hover .opener,
@@ -967,30 +966,12 @@ a.onpage  {
   padding: 5px;
 
   background: 
-    linear-gradient(135deg,rgba(255,255,255,1) 0px, rgba(255,255,255,1) 10px, 
-                           rgba(146,205,255,1) 10px, rgba(146,205,255,1) 20px,
-                           rgba(255,255,255,1) 20px, rgba(255,255,255,1) 30px,
-                           rgba(254,158,144,1) 30px, rgba(254,158,144,1) 40px,
-                           rgba(255,255,255,1) 40px, rgba(255,255,255,1) 50px, 
-                           rgba(146,205,255,1) 50px, rgba(146,205,255,1) 60px,
-                           rgba(255,255,255,1) 60px, rgba(255,255,255,1) 70px,
-                           rgba(254,158,144,1) 70px, rgba(254,158,144,1) 80px,
-                           rgba(255,255,255,1) 80px, rgba(255,255,255,1) 90px, 
-                           rgba(146,205,255,1) 90px, rgba(146,205,255,1) 100px,   
-                           rgba(255,255,255,1) 100px, rgba(255,255,255,1) 120px, 
-                           rgba(146,205,255,1) 120px, rgba(146,205,255,1) 130px,
-                           rgba(255,255,255,1) 130px, rgba(255,255,255,1) 140px,
-                           rgba(254,158,144,1) 140px, rgba(254,158,144,1) 150px,
-                           rgba(255,255,255,1) 150px, rgba(255,255,255,1) 160px, 
-                           rgba(146,205,255,1) 160px, rgba(146,205,255,1) 170px,
-                           rgba(255,255,255,1) 170px, rgba(255,255,255,1) 180px,
-                           rgba(254,158,144,1) 180px, rgba(254,158,144,1) 190px,
-                           rgba(255,255,255,1) 190px, rgba(255,255,255,1) 200px, 
-                           rgba(146,205,255,1) 200px, rgba(146,205,255,1) 210px,
-                           rgba(255,255,255,1) 210px, rgba(255,255,255,1) 220px                                                    
-    );                                           
-  background-size: 56px 56px;
-  background-position: 27px; 
+      url("../img/post.svg") no-repeat,
+      repeating-linear-gradient(135deg, 
+      rgba(255,255,255,1) 0px, rgba(255,255,255,1) 8px, 
+      rgba(146,205,255,1) 8px, rgba(146,205,255,1) 16px,  
+      rgba(255,255,255,1) 16px, rgba(255,255,255,1) 24px, 
+      rgba(254,158,144,1) 24px, rgba(254,158,144,1) 32px);                              
   border-radius: 13px;
 }
 .sign-up-bg {
@@ -1100,7 +1081,6 @@ a.onpage  {
   color: #ffffff;
 }
 .inner-page .page-footer-container {
-  padding-top: 7px;
   border-top: 1px solid rgba(255,255,255, 0.2);
 }
 .socials-list,
@@ -1111,11 +1091,11 @@ a.onpage  {
   list-style: none;
 }
 .socials-list {
-	margin-bottom: 5px;
+	margin-top: 10px;
 	margin-right: 13px;
 }
 .footer-info {
-	margin-bottom: 12px;
+	margin-bottom: 0px;
 }
 .footer-info a {
   text-decoration: none;
@@ -1149,7 +1129,7 @@ a.onpage  {
 }
 .footer-copyright {
 	align-self: flex-start;
-	margin-top: 12px;
+	margin-top: 17px;
 	margin-left: 8px;
   font-size: 12px;
 }
@@ -1161,7 +1141,7 @@ a.onpage  {
   transition: all .5s ease;
 }
 .footer-copyright img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 /* socials */
 .socials-items {
@@ -1173,24 +1153,18 @@ a.onpage  {
 .socials-items img {
   border-radius: 30px;
   box-shadow: 0px 0px 0px 3px rgba(255,255,255, 0.5);
-}
-.socials-items a {
   opacity: 0.8;
-  transition: opacity 1s ease;
+  transition: opacity .5s ease;
 }
-.socials-items a:hover,
-.socials-items a:focus {
+.socials-items img:hover,
+.socials-items a:focus img {
+  box-shadow: 0px 0px 0px 3px rgba(255,255,255, 0.7);
   opacity: 1;
 }
-.socials-items a:active {
-  opacity: 0.7;
-}
-.socials-items a:hover img,
-.socials-items a:focus img,
 .socials-items a:active img {
+  opacity: 0.7;
   box-shadow: 0px 0px 0px 3px rgba(255,255,255, 0.7);
 }
-
 /* модальное окно с формой */
 .modal-callback.overlay{
   width: 100%;
