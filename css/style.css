@@ -1019,6 +1019,7 @@ img {
   position: absolute;
   top: 63px;
   right: 27px;
+  z-index: 1;
   
   color: #323232;
   background-color: #fffefd;
@@ -1065,14 +1066,28 @@ img {
 .map-frame {
   width:100%;
 }
-.map-frame img {
+.map-frame {
   display: flex;
   width: 1200px;
   height: 430px;
 
   background-color: #cee0c0;
 }
-
+.map-image {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.map-image img {
+  width: 1200px;
+  height: 430px;
+}
+.map-pin {
+  position: absolute;
+  top: 140px;
+  left: 266px;
+  z-index: 1;
+}
 .page-footer {
   font-family: "Roboto", Arial, sans-serif;
   font-size: 13px;
