@@ -108,10 +108,10 @@ if(cart !== null) {
 	}, true);
 }
 
-var navItems = document.getElementsByClassName('slide-nav');
-var slides = document.getElementsByClassName('product-slide');
-var colors = ['#849d8f','#8996a6','#9d8b84'];
-var wrapper = document.getElementById('wrapper');
+var navItems = document.getElementsByClassName("slide-nav");
+var slides = document.getElementsByClassName("product-slide");
+var colors = ["#849d8f","#8996a6","#9d8b84"];
+var wrapper = document.getElementById("wrapper");
 var currentSlide = 0;
 
 function getCurrent() {
@@ -138,21 +138,37 @@ for(var i=0; i<navItems.length; i++) {
   }, true);
 }
 
-var firstRange = document.querySelector('[type=range].first');
-var secondRange = document.querySelector('[type=range].second');
 
-firstRange.addEventListener('input', function () {
-	firstRange.style.setProperty('--val', +firstRange.value);
-}, false);
 
-secondRange.addEventListener('input', function () {
-	secondRange.style.setProperty('--val', +secondRange.value);
-}, false);
+var openModalButton = document.getElementById("modal-opener");
+var callbackForm = document.getElementById("modal-callback");
+var closeModalButton = document.getElementById("close-modal");
 
-function ready() {
-  document.documentElement.classList.add('js');
-  firstRange.style.setProperty('--val', +firstRange.value);
-  secondRange.style.setProperty('--val', +secondRange.value);
+if(openModalButton!==null && callbackForm !==null && closeModalButton!==null) {
+  openModalButton.addEventListener('click', function() {
+    callbackForm.className = "modal modal-callback";
+  }, true);
+  closeModalButton.addEventListener('click', function() {
+    callbackForm.className = "modal modal-callback visually-hidden";
+  }, true);
 }
-document.addEventListener("DOMContentLoaded", ready);
 
+var firstRange = document.querySelector("[type=range].first");
+var secondRange = document.querySelector("[type=range].second");
+
+if(firstRange!==null && secondRange!==null) {
+  firstRange.addEventListener("input", function () {
+    firstRange.style.setProperty("--val", +firstRange.value);
+  }, false);
+
+  secondRange.addEventListener("input", function () {
+    secondRange.style.setProperty("--val", +secondRange.value);
+  }, false);
+
+  function ready() {
+    document.documentElement.classList.add("js");
+    firstRange.style.setProperty("--val", +firstRange.value);
+    secondRange.style.setProperty("--val", +secondRange.value);
+  }
+  document.addEventListener("DOMContentLoaded", ready);
+}
