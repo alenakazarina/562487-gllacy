@@ -6,6 +6,7 @@
 
 		<link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+   	
   </head>
 
   <body id="wrapper">
@@ -317,12 +318,7 @@
 					<div class="map-image">
 						<img src="img/map.jpg" alt="«Глэйси» на карте" width="1200" height="430">
 					</div>
-					<div class="map-frame">
-						<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Acf80816dfee5813e1140d2b8e3232b69c8cd93a3de959522673cb55293b8a5d1&amp;width=100%25&amp;height=430&amp;lang=ru_RU&amp;scroll=true"></script>
-					</div>
-					<div class="map-pin">
-						<img src="img/map-pin.png" alt="Здесь" width="218" height="142" aria-hidden="true">
-					</div>
+					<div class="map-frame" id="map"></div>
 				</div>	
 			</section>
 	
@@ -370,7 +366,8 @@
 				<input class="close-button" id="close-modal" type="image" src="img/cross-big.svg" alt="Закрыть" width="18" height="17">
 			</div>
 		</section>
-
+		
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 		<script src="js/script.js"></script>
   </body>
 </html>

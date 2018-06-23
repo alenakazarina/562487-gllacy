@@ -172,3 +172,24 @@ if(firstRange!==null && secondRange!==null) {
   }
   document.addEventListener("DOMContentLoaded", ready);
 }
+
+ymaps.ready(function () {
+  var myMap = new ymaps.Map('map', {
+      center: [59.93889934199378,30.326401896850584],
+      zoom: 17
+  }, {
+      searchControlProvider: 'yandex#search'
+  }),
+
+  myPlacemark = new ymaps.Placemark([59.93863921358829,30.323044581586483], {
+      balloonContent: '«Глэйси» на карте'
+  }, {
+      iconLayout: 'default#image',
+      iconImageHref: 'img/map-pin.png',
+      iconImageSize: [218, 142],
+      iconImageOffset: [-40, -140]
+  });
+
+  myMap.geoObjects
+    .add(myPlacemark)
+});
