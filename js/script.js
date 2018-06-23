@@ -1,4 +1,3 @@
-// dropdown-menu
 var menu = document.getElementById("dropdown-menu");
 var toggle = document.getElementById("dropdown-menu-toggle");
 
@@ -24,7 +23,7 @@ menu.addEventListener("focusout", function( event ) {
   menu.className = "dropdown-menu flex-column visually-hidden";
 }, true);
 
-// search-block
+
 var search = document.getElementById("search-form");
 toggle = document.getElementById("search-toggle");
 
@@ -50,7 +49,7 @@ search.addEventListener("focusout", function( event ) {
   search.className = "search-form visually-hidden";
 }, true);
 
-// login-block
+
 var login = document.getElementById("login-form");
 toggle = document.getElementById("login-toggle");
 
@@ -76,7 +75,7 @@ login.addEventListener("focusout", function( event ) {
   login.className = "login-form flex-column visually-hidden";
 }, true);
 
-// cart-block
+
 var cart = document.getElementById("cart-form");
 toggle = document.getElementById("cart-toggle");
 
@@ -109,7 +108,6 @@ if(cart !== null) {
 	}, true);
 }
 
-// slider
 var navItems = document.getElementsByClassName('slide-nav');
 var slides = document.getElementsByClassName('product-slide');
 var colors = ['#849d8f','#8996a6','#9d8b84'];
@@ -140,26 +138,21 @@ for(var i=0; i<navItems.length; i++) {
   }, true);
 }
 
-// range
-// var firstRange = document.querySelector('[type=range].first');
-// document.documentElement.classList.add('js');
-// firstRange.addEventListener('input', function () {
-// 	firstRange.style.setProperty('--val', +firstRange.value);
-// }, false);
+var firstRange = document.querySelector('[type=range].first');
+var secondRange = document.querySelector('[type=range].second');
 
-// var secondRange = document.querySelector('[type=range].second');
-// document.documentElement.classList.add('js');
-// secondRange.addEventListener('input', function () {
-// 	secondRange.style.setProperty('--val', +secondRange.value);
-// }, false);
+firstRange.addEventListener('input', function () {
+	firstRange.style.setProperty('--val', +firstRange.value);
+}, false);
 
-// function outputRange() {
-//   var firstRange = document.querySelector('[type=range].first');
-//   var secondRange = document.querySelector('[type=range].second');
-//   var firstOutput = document.getElementById('firstOutput');
-// firstOutput.value = 240 - parseInt(firstRange.value);
-//   var secondOutput = document.getElementById('secondOutput');
-// secondOutput.value = parseInt(secondRange.value) + 250;  
-// }
+secondRange.addEventListener('input', function () {
+	secondRange.style.setProperty('--val', +secondRange.value);
+}, false);
 
+function ready() {
+  document.documentElement.classList.add('js');
+  firstRange.style.setProperty('--val', +firstRange.value);
+  secondRange.style.setProperty('--val', +secondRange.value);
+}
+document.addEventListener("DOMContentLoaded", ready);
 
