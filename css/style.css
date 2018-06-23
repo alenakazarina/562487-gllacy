@@ -1327,7 +1327,7 @@ img {
 .filter-sorting .filter-layout {
   width: 194px;
   color: #ffffff;
-  transition: color: .5s ease;
+  transition: color .5s ease;
 }
 .filter-sorting .filter-layout:hover {
   color: #323232;
