@@ -729,6 +729,7 @@ img {
 }
 .promo-item-text {
 	margin: 15px 0px 45px;
+	letter-spacing: 0.003em;
 }
 .promo-item .button {
   align-self: flex-end;
@@ -800,9 +801,9 @@ img {
 	align-items: baseline;
   margin: 0;
   position: absolute;
-  top: 214px;
+  top: 216px;
+  left: 10px;
 
-  font-family: "Roboto Bold", Arial, sans-serif;
   font-size: 45px;
   line-height: 45px;
   font-weight: 700;
@@ -813,8 +814,8 @@ img {
   width: 31px;
   height: 36px;
 	position: relative;
-	top: 4px;
-	left: 2px;
+	top: 3px;
+	left: 3px;
 }
 .catalog-item-price span {
   margin-left: 3px;
@@ -884,9 +885,6 @@ img {
 .advantages-item {
   margin-bottom: 22px;
 }
-.advantages-item:nth-of-type(2n) {
-	margin-right: 7px;
-}
 .advantages-item-title {
   min-width: 49px;
   margin: 0;
@@ -896,15 +894,19 @@ img {
   top: -12px;
 }
 .advantages-item:nth-of-type(2n) .advantages-item-title {
-	margin-right: 10px;
+	margin-right: 9px;
 }
 .advantages-item-title img {
   width: 49px;
   height: 49px;
 }
 .advantages-item-text {
-  width: 476px;
+  width: 478px;
   margin: 0;
+  letter-spacing: 0.002em;
+}
+.advantages-item:nth-of-type(2n) .advantages-item-text {
+	margin-right: 5px;
 }
 
 .updates {
@@ -978,10 +980,11 @@ img {
   border-radius: 13px;
 }
 .sign-up-text {
-	width: 99%;
+	width: 31.2em;
   margin: 0;
   margin-bottom: 35px;
-
+	
+	letter-spacing: 0.004em;
   color: #5a5a5a;
 }
 .sign-up-form .form-input {
@@ -1477,7 +1480,7 @@ img {
   padding-bottom: 0px;
 }
 .filter-inner .filter-layout {
-  width: 703px;
+  min-width: 703px;
 }
 .filters input[type="checkbox"] + label,
 .filters input[type="radio"] + label {
@@ -1488,12 +1491,17 @@ img {
 .filters input[type="radio"] + label {
   margin-right: 22px;
 }
+.filters input[type="radio"]:first-of-type + label {
+  margin-left: 16px;
+}
 .filters input[type="checkbox"] + label {
   margin-right: 19px;
 }
-.filters input[type="checkbox"]:first-of-type + label,
-.filters input[type="radio"]:first-of-type + label {
-  margin-left: 16px;
+.filters input[type="checkbox"]:nth-of-type(3) + label {
+  margin-right: 22px;
+}
+.filters input[type="checkbox"]:first-of-type + label{
+	margin-left: 15px;
 }
 .filters input[type="checkbox"]:last-of-type + label,
 .filters input[type="radio"]:last-of-type + label {
