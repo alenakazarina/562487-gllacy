@@ -138,18 +138,97 @@ for(var i=0; i<navItems.length; i++) {
   }, true);
 }
 
-
-
 var openModalButton = document.getElementById("modal-opener");
 var callbackForm = document.getElementById("modal-callback");
 var closeModalButton = document.getElementById("close-modal");
 
 if(openModalButton!==null && callbackForm !==null && closeModalButton!==null) {
   openModalButton.addEventListener('click', function() {
-    callbackForm.className = "modal modal-callback";
+    showModal(callbackForm);
   }, true);
   closeModalButton.addEventListener('click', function() {
-    callbackForm.className = "modal modal-callback visually-hidden";
+    closeModal(callbackForm);
+  }, true);
+}
+window.addEventListener('keyup', function (e) {
+  if (e.which === 27) { 
+      closeModal(callbackForm);
+  }
+})
+function showModal(elem) {
+	elem.className = "modal modal-callback";
+}
+function closeModal(elem) {
+	elem.className = "modal modal-callback visually-hidden";
+}
+
+function animate(options) {
+  var start = performance.now();
+  requestAnimationFrame(function animate(time) {
+    var timeFraction = (time - start) / options.duration;
+    if (timeFraction > 1) timeFraction = 1;
+
+    var progress = options.timing(timeFraction)
+    options.draw(progress);
+    if (timeFraction < 1) {
+      requestAnimationFrame(animate);
+    }
+  });
+}
+
+var form = document.getElementById('callback-form');
+var borderTop = document.getElementById('form-border-top');
+var borderLeft = document.getElementById('form-border-left');
+var borderBottom = document.getElementById('form-border-bottom');
+var borderRight = document.getElementById('form-border-right');
+
+if(form !== null) {
+  form.addEventListener('focus', function() {
+    animate({
+      duration: 1500,
+      timing: function(timeFraction) {
+        return timeFraction;
+      },
+      draw: function(progress) {
+        borderTop.style.width = progress * 95 + '%';
+        borderLeft.style.height = progress * 95 + '%';
+        borderBottom.style.width = progress * 95 + '%';
+        borderRight.style.height = progress * 95 + '%';
+        borderTop.style.opacity = 1-progress;
+        borderLeft.style.opacity = 1-progress;
+        borderBottom.style.opacity = 1-progress;
+        borderRight.style.opacity = 1-progress;
+      }
+    });
+  }, true);
+
+  form.addEventListener('invalid', function() {
+    animate({
+      duration: 1000,
+      timing: function(timeFraction) {
+        return timeFraction;
+      },
+      draw: function(progress) {
+        borderTop.classList.remove('form-border');
+        borderLeft.classList.remove('form-border');
+        borderBottom.classList.remove('form-border');
+        borderRight.classList.remove('form-border');
+        borderTop.classList.add('form-border-invalid');
+        borderLeft.classList.add('form-border-invalid');
+        borderBottom.classList.add('form-border-invalid');
+        borderRight.classList.add('form-border-invalid');
+      }
+    });
+  }, true);
+  form.addEventListener('submit', function() {
+    borderTop.classList.remove('form-border-invalid');
+    borderLeft.classList.remove('form-border-invalid');
+    borderBottom.classList.remove('form-border-invalid');
+    borderRight.classList.remove('form-border-invalid');
+    borderTop.classList.add('form-border');
+    borderLeft.classList.add('form-border');
+    borderBottom.classList.add('form-border');
+    borderRight.classList.add('form-border');
   }, true);
 }
 
@@ -173,23 +252,27 @@ if(firstRange!==null && secondRange!==null) {
   document.addEventListener("DOMContentLoaded", ready);
 }
 
-ymaps.ready(function () {
-  var myMap = new ymaps.Map('map', {
-      center: [59.93889934199378,30.326401896850584],
-      zoom: 17
-  }, {
-      searchControlProvider: 'yandex#search'
-  }),
+var ymaps;
 
-  myPlacemark = new ymaps.Placemark([59.93863921358829,30.323044581586483], {
-      balloonContent: '«Глэйси» на карте'
-  }, {
-      iconLayout: 'default#image',
-      iconImageHref: 'img/map-pin.png',
-      iconImageSize: [218, 142],
-      iconImageOffset: [-40, -140]
+if(ymaps) {
+  ymaps.ready(function () {
+    var myMap = new ymaps.Map('map', {
+        center: [59.93889934199378,30.326401896850584],
+        zoom: 17
+    }, {
+        searchControlProvider: 'yandex#search'
+    }),
+
+    myPlacemark = new ymaps.Placemark([59.93863921358829,30.323044581586483], {
+        balloonContent: '«Глэйси» на карте'
+    }, {
+        iconLayout: 'default#image',
+        iconImageHref: 'img/map-pin.png',
+        iconImageSize: [218, 142],
+        iconImageOffset: [-40, -140]
+    });
+
+    myMap.geoObjects
+      .add(myPlacemark)
   });
-
-  myMap.geoObjects
-    .add(myPlacemark)
-});
+}
