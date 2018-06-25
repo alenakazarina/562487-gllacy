@@ -673,10 +673,12 @@ img {
   margin-bottom: 41px;
 }
 .slide-nav {
-  width: 19px;
-  height: 19px;
-  margin-right: 10px;
-
+  width: 20px;
+  height: 20px;
+  margin-right: 9px;
+  
+  font-size: 0;
+  
   border: 2px solid #ffffff;
   border-radius: 50%;
   background-color: transparent;
