@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Сливочное мороженое</title>
 
-		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body class="inner-page">
@@ -85,7 +85,7 @@
 
 						<ul class="cart-block">
 							<li class="toggle flex-column">
-						    <button type="button" class="opener flex-center" id="cart-toggle">
+						    <button type="button" class="opener full flex-center" id="cart-toggle">
 						      <span>2 товара</span>
 						    </button> 	
 					
@@ -139,7 +139,7 @@
 				      <fieldset class="filter-sorting">
 				        <legend class="filter-title">Сортировка:</legend>
 				        <div class="filter-layout flex-center">
-				          <select class="styled-select" id="sorting">
+				          <select id="sorting">
 				            <option selected>по популярности</option>
 				            <option >сначала недорогие</option>
 				            <option >сначала дорогие</option>
@@ -153,20 +153,20 @@
 				        <legend class="filter-title">Цена: 100 руб. – 500 руб.</legend>
 				        <div class="filter-layout flex-center">
 				          <input class="first" type="range" min="0" max="250" step="10" value="50">
-				          <input class="second" type="range" min="0" max="250" value="50" step="10">
+				          <input class="second" type="range" min="250" max="500" step="10" value="350">
 				        </div>
 				       </fieldset>
 
 				       <fieldset class="filter-fatness flex-column">
 				        <legend class="filter-title">Жирность:</legend>
 				        <div class="filter-layout flex-center">
-				          <input class="visually-hidden" type="radio" name="fatness" id="fatness-field-1">
+				          <input class="visually-hidden" type="radio" name="fatness" value="0%" id="fatness-field-1">
 				          <label for="fatness-field-1">0%</label>
-				          <input class="visually-hidden" type="radio" name="fatness" id="fatness-field-2" checked>
+				          <input class="visually-hidden" type="radio" name="fatness" value="10%" id="fatness-field-2" checked>
 				          <label for="fatness-field-2">до 10%</label>
-				          <input class="visually-hidden" type="radio" name="fatness" id="fatness-field-3">
+				          <input class="visually-hidden" type="radio" name="fatness" value="30%" id="fatness-field-3">
 				          <label for="fatness-field-3">до 30%</label>
-				          <input class="visually-hidden" type="radio" name="fatness" id="fatness-field-4" disabled>
+				          <input class="visually-hidden" type="radio" name="fatness" value="30%+" id="fatness-field-4">
 				          <label for="fatness-field-4">выше 30%</label>
 				         </div>
 				        </fieldset>
@@ -176,15 +176,15 @@
 				        <fieldset class="filter-inner flex-column" id="inner">	
 				          <legend class="filter-title">Наполнители:</legend>
 				          <div class="filter-layout flex-center">
-				            <input class="visually-hidden" type="checkbox" name="inner" id="inner-field-1" checked>
+				            <input class="visually-hidden" type="checkbox" name="chocolate" id="inner-field-1" checked>
 				            <label for="inner-field-1">шоколадные</label>
-				            <input class="visually-hidden" type="checkbox" name="inner" id="inner-field-2" checked>
+				            <input class="visually-hidden" type="checkbox" name="sugar" id="inner-field-2" checked>
 				            <label for="inner-field-2">сахарные присыпки</label>
-				            <input class="visually-hidden" type="checkbox" name="inner" id="inner-field-3">
+				            <input class="visually-hidden" type="checkbox" name="fruit" id="inner-field-3">
 				            <label for="inner-field-3">фрукты</label>
-				            <input class="visually-hidden" type="checkbox" name="inner" id="inner-field-4">
+				            <input class="visually-hidden" type="checkbox" name="syrop" id="inner-field-4">
 				            <label for="inner-field-4">сиропы</label>
-				            <input class="visually-hidden" type="checkbox" name="inner" id="inner-field-5" disabled>	
+				            <input class="visually-hidden" type="checkbox" name="jam" id="inner-field-5">	
 				            <label for="inner-field-5">джемы</label>
 				          </div>	
 				        </fieldset>				     

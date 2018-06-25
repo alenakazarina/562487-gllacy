@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Глейси</title>
 
-		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/style.min.css">
    	
   </head>
@@ -84,7 +84,7 @@
 					
 						<ul class="cart-block">
 							<li class="toggle flex-column">
-						    <button type="button" class="opener flex-center empty" id="cart-toggle" aria-label="В корзине 0 товаров">
+						    <button type="button" class="opener flex-center empty" id="cart-toggle" aria-label="В корзине 0 товаров" title="В корзине 0 товаров">
 						      <span>Пусто</span>
 						    </button>
 						  </li>
@@ -305,7 +305,6 @@
 
 			<section class="address">
 				<div class="address-container flex">
-
 					<div class="address-info flex-column">
 						<h2 class="address-info-title">Адрес главного офиса
 							и офлайн-магазина:</h2>
@@ -318,8 +317,8 @@
 					<div class="map-image">
 						<img src="img/map.jpg" alt="«Глэйси» на карте" width="1200" height="430">
 					</div>
-					<div class="map-frame" id="map"></div>
 				</div>	
+				<div class="map-frame" id="map"></div>
 			</section>
 	
 		</main>
@@ -356,8 +355,12 @@
 		<section class="modal modal-callback visually-hidden" id="modal-callback">
 			<div class="modal-callback-container flex-column">
 				<h2 class="visually-hidden">Форма обратной связи</h2>
+				<div id="form-border-top" class="form-border form-border-top"></div>
+				<div id="form-border-left" class="form-border form-border-left"></div>
+				<div id="form-border-right" class="form-border form-border-right"></div>
+				<div id="form-border-bottom" class="form-border form-border-bottom"></div>
 				<p class="callback-title">Мы обязательно вам ответим!</p>
-				<form class="callback-form flex-column" method="post" action="https://echo.htmlacademy.ru"> 
+				<form class="callback-form flex-column" id="callback-form" method="post" action="https://echo.htmlacademy.ru"> 
 				 <input class="form-input" type="text" name="name" placeholder="Как вас зовут?">
 				 <input class="form-input" type="email" name="email" placeholder="Ваша почта для ответа?">
 				 <textarea class="form-input" name="comment" rows="4" cols="10" placeholder="Напишите что-нибудь..."></textarea>
