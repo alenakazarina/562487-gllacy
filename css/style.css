@@ -169,9 +169,10 @@ img {
 }
 
 .page-header-container {
-  width: 1146px;
-  margin: 0 auto;
+  width: 1200px; 
+  padding: 0px 26px;
   padding-top: 9px;
+  margin: 0 auto;
   position: relative;
 }
 .navigation {
@@ -584,7 +585,7 @@ img {
 
 .header-contacts {
   position: absolute;
-  right: 0px;
+  right: 26px;
   top: 74px;
 
   text-align: right;
@@ -606,7 +607,8 @@ img {
 }
 
 .product-slides-container {
-  width: 1146px;
+  width: 1200px; 
+  padding: 0px 26px;
   margin: 0 auto;
 }
 .product-slides-list {
@@ -695,7 +697,8 @@ img {
 
 .promo-container {
   justify-content: space-between;
-  width: 1146px;
+  width: 1200px; 
+  padding: 0px 26px;
   margin: 0 auto;
   margin-bottom: 32px;
 }
@@ -744,7 +747,8 @@ img {
   color: #ffffff;
 }
 .catalog-container {
-  width: 1172px;
+  width: 1200px; 
+  padding: 0px 14px;
   margin: 0 auto;
   margin-bottom: 6px;
 }
@@ -850,12 +854,15 @@ img {
   color: #323232;
 }
 .advantages-container {
-  width: 1146px;
-  min-height: 306px;
-  padding: 24px 20px 3px 20px;
+  width: 1200px;
+  padding: 0px 26px;
   margin: 0 auto;
   margin-bottom: 40px;
-
+}
+.advantages-content {
+  width: 100%;
+  min-height: 306px;
+  padding: 24px 20px 3px 20px;
   background-image: url("../img/waffle.jpg");
   background-repeat: repeat;
   background-color: #ece0c7;
@@ -914,7 +921,8 @@ img {
 }
 .updates-container {
   justify-content: space-between;
-  width: 1146px;
+  width: 1200px; 
+  padding: 0px 26px;
   margin: 0 auto;
   margin-bottom: 40px;
 }
@@ -1069,12 +1077,17 @@ img {
   top: 0;
   left: 0;
 
-  background-color: #cee0c0;
+  
 }
 .map-image {
+  width: 1200px;
+  height: 430px;
+
   position: absolute;
   top: 0px;
   left: 0px;
+
+  background-color: #cee0c0;
 }
 .map-image img {
   width: 1200px;
@@ -1090,8 +1103,9 @@ img {
 }
 .page-footer-container {
   justify-content: space-between;
-  width: 1146px;
+  width: 1200px;
   min-height: 105px;
+  padding: 0px 26px;
   margin: 0 auto;
 }
 .inner-page .page-footer-container {
@@ -1246,13 +1260,9 @@ img {
   margin-bottom: 22px;
 }
 .main-top-container {
-  width: 1146px;
+  width: 1200px;
+  padding: 0px 26px;
   margin: 0 auto;
-}
-.main-bottom-container {
-  width: 1146px;
-  margin: 0 auto;
-  margin-bottom: 27px;
 }
 .inner-page .page-title {
   margin: 0;
