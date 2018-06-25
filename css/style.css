@@ -1142,9 +1142,8 @@ img {
   margin: 3px 3px 0px 3px;
 }
 .footer-info-supply::before {
-  display: flex;
   content: '';
-  width: 15px;
+  width: 16px;
   height: 13px;
   
   position: absolute;
@@ -1152,7 +1151,8 @@ img {
   left: -19px;
 
   background: url(../img/heart.svg) no-repeat;
-  transition: all .25s ease;
+  background-size: 100% 100%;
+  transition: transform .25s ease;
 }
 .footer-info-supply:hover::before {
   transform: scale(1.2);
@@ -1172,10 +1172,8 @@ img {
   margin-top: 2px;
 }
 .footer-copyright img {
-  transition: all .5s ease;
-}
-.footer-copyright img:hover {
-  transform: scale(1.05);
+  width: 108px;
+  height: 37px;
 }
 
 .modal {
