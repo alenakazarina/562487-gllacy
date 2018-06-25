@@ -112,22 +112,32 @@ img {
 .form-input:focus {
   border: 2px solid rgba(46, 136, 228, 0.52);
 }
-*::-webkit-input-placeholder {
+.form-input::-webkit-input-placeholder {
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 400;
   color: #999999;
 }
-*:-moz-placeholder {
+.form-input:-moz-placeholder {
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 400;
   color: #999999;
 }
-*::-moz-placeholder {
+.form-input::-moz-placeholder {
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 400;
   color: #999999;
 }
-*:-ms-input-placeholder {
+.form-input:-ms-input-placeholder {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  color: #999999;
+}
+.form-input::-ms-input-placeholder {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  color: #999999;
+}
+.form-input::placeholder {
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 400;
   color: #999999;
@@ -1345,6 +1355,11 @@ img {
   border-top: 9px solid #323232;
 }
 .filter-sorting select { 
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
   width: 100%;
   padding-left: 11px;
 
@@ -1358,6 +1373,7 @@ img {
   background-color: transparent;
   border: none;
 }
+
 .filter-sorting label[for="sorting"] {
   width: 0px;
   height: 0px;
@@ -1409,6 +1425,11 @@ img {
   background: transparent;
 
   font: 1em/1 "Roboto", Arial, sans-serif;
+}
+.filter-price [type=range].second {
+  --min: 250; 
+  --max: 500; 
+  --val: 350;
 }
 .filter-price [type=range]::-webkit-slider-runnable-track {
   width: 5.4em;
@@ -1481,6 +1502,12 @@ img {
 }
 .filter-price [type=range]::-ms-tooltip {
   display: none;
+}
+.filter-price input {
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .filter-fatness .filter-layout {
@@ -1631,12 +1658,6 @@ img {
   background-color: #ededed;
   box-shadow: inset 0px 2px 1px 0 #696969;
   border: none;
-}
-input, select, option {
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
 }
 
 .pagination-list {
