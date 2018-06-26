@@ -404,6 +404,9 @@ img {
   border: none; 
   border-radius: 30px; 
 }
+.search-block .opener:focus {
+  background-color: #f8f7f4;
+}
 .search-form {
   width: 341px;
   min-height: 84px;
@@ -451,6 +454,9 @@ img {
   background-color: rgba(255,255,255, 0.2);  
   border: none; 
   border-radius: 30px; 
+}
+.login-block .opener:focus {
+  background-color: #f8f7f4;
 }
 .login-block .image {
   margin-right: 6px;

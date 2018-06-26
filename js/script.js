@@ -50,19 +50,15 @@ toggleSearch = document.getElementById("search-toggle");
 
 toggleSearch.addEventListener("focus", function( event ) {
   if (search.className === "search-form active") {
-    toggleSearch.style.background = '#f8f7f4';
     search.className = "search-form visually-hidden";
   } else {
-      toggleSearch.style.background = '#f8f7f4';
     	search.className = "search-form active";  
   }   
 }, true);
 toggleSearch.addEventListener("focusout", function( event ) {
   if (search.className === "search-form active") {
-    toggleSearch.style.background = 'rgba(255,255,255, 0.2)';
     search.className = "search-form visually-hidden";
   } else {
-      toggleSearch.style.background = 'rgba(255,255,255, 0.2)';
      	search.className = "search-form active";
   }   
 }, true);
@@ -80,19 +76,15 @@ toggleLogin = document.getElementById("login-toggle");
 
 toggleLogin.addEventListener("focus", function( event ) {
   if (login.className === "login-form flex-column active") {
-    toggleLogin.style.background = '#f8f7f4';
     login.className = "login-form flex-column visually-hidden";
   } else {
-      toggleLogin.style.background = '#f8f7f4';
     	login.className = "login-form flex-column active";
   }   
 }, true);
 toggleLogin.addEventListener("focusout", function( event ) {
   if (login.className === "login-form flex-column active") {
-    toggleLogin.style.background = 'rgba(255,255,255, 0.2)';
     login.className = "login-form flex-column visually-hidden";
   } else {
-      toggleLogin.style.background = 'rgba(255,255,255, 0.2)';
      	login.className = "login-form flex-column active";
   }   
 }, true);
