@@ -10,24 +10,25 @@
   <body class="inner-page">
 
   	<header class="page-header">
-  		<div class="page-header-container"> 
-
-	  		<nav class="navigation flex-center" aria-label="Основное меню">
-	  			<div class="nav-left flex-center">
-						<a class="header-logo" href="index.html">
-							<img src="img/logo.svg" alt="На главную страницу интернет-магазина «Глэйси»" width="154" height="64">
-						</a>
-
-						<ul class="site-navigation flex-center">
-						  <li class="site-navigation-item toggle flex-column">   
-						    <a class="site-navigation-link onpage" id="dropdown-menu-toggle" href="#">Каталог</a>
-
+  		<div class="page-header-container flex"> 
+				
+				<a class="header-logo" href="index.html">
+					<img src="img/logo.svg" alt="На главную страницу интернет-магазина «Глэйси»" width="154" height="64">
+				</a>
+	  		<nav class="navigation flex">
+					<div class="nav-left flex">
+						
+						<ul class="site-navigation flex" aria-label="Основное меню">
+						  <li class="site-navigation-item">  
+						  	<div class="link-bg onpage">
+						    	<a href="#" class="site-navigation-link link" id="dropdown-menu-toggle">Каталог</a>
+								</div> 
 						    <ul class="dropdown-menu flex-column visually-hidden" id="dropdown-menu" aria-label="Каталог меню">
 						      <li class="dropdown-menu-item"> 
 						        <a href="#">Новинки</a></li>
 									<li class="dropdown-menu-item">
-						        <a class="dropdown-menu-link onpage">Сливочное</a></li>
-								  <li class="dropdown-menu-item">
+						        <a class="onpage">Сливочное</a></li>
+								 	<li class="dropdown-menu-item">
 						        <a href="#">Щербеты</a></li>
 									<li class="dropdown-menu-item">
 						        <a href="#">Фруктовый лед</a></li>
@@ -36,14 +37,18 @@
 								</ul>
 							</li>
 		  
-							<li class="site-navigation-item flex-column">
-						  	<a href="#" class="site-navigation-link">Доставка и оплата</a>
+							<li class="site-navigation-item">
+								<div class="link-bg">
+						  		<a href="#" class="site-navigation-link link">Доставка и оплата</a>
+						  	</div>
 						  </li>   
-							<li class="site-navigation-item flex-column">
-								<a href="#" class="site-navigation-link">О Компании</a>
-						  </li>     
+							<li class="site-navigation-item">
+								<div class="link-bg">
+									<a href="#" class="site-navigation-link link">О Компании</a>
+								</div>
+						  </li>      
 						</ul>
-					</div>		
+					</div>
 
  					<div class="nav-right flex-center-end">
 						<ul class="search-block">
@@ -423,6 +428,6 @@
 			</div>
 		</footer>
 
-		<script src="js/script.min.js"></script>
+		<script src="js/script.js"></script>
   </body>
 </html>
