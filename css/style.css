@@ -184,15 +184,12 @@ img {
   padding: 0px 26px;
   padding-top: 9px;
   margin: 0 auto;
-  margin-bottom: 4px;
   position: relative;
 }
 .navigation {
   justify-content: space-between;
   min-width: 994px;
-  min-height: 40px;
-  padding-top: 3px;
-  align-self: center;
+  padding-top: 14px;
 
   font-family: "Roboto Medium", Arial, sans-serif;
   font-size: 14px;
@@ -201,11 +198,13 @@ img {
 }
 .nav-left {
   flex-wrap: wrap;
-	min-width: 570px;
+	width: 430px;
 }
 .nav-right {
   justify-content: flex-end;
-	width: 293px;
+	width: 290px;
+
+	position: relative;
 }
 .header-logo {
   display: flex;
@@ -219,7 +218,7 @@ img {
 }
 .site-navigation {
   flex-wrap: wrap;
-  min-width: 500px;
+ 	width: 470px;
   padding: 0;
   margin: 0;
 
@@ -230,6 +229,7 @@ img {
   list-style: none;
 }
 .site-navigation-item {
+	margin-bottom: 10px;
   position: relative;
 	white-space: nowrap;
 }
@@ -504,7 +504,7 @@ img {
 	margin-right: 2px;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 13px;
-  line-height: 24px;
+  line-height: 21px;
 }
 .login-form-bottom-links a {
   color: #323232;
@@ -624,8 +624,8 @@ img {
 
 .header-contacts {
   position: absolute;
-  right: 26px;
-  top: 74px;
+  right: 2px;
+  top: 50px;
 
   text-align: right;
 }
@@ -661,7 +661,7 @@ img {
   height: 880px;
 
   position: absolute;
-  top: -77px;
+  top: -75px;
   z-index: -1;
 
   opacity: 0;
@@ -687,7 +687,7 @@ img {
   margin: 0;
 
   position: relative;
-  top: 390px;
+  top: 391px;
   
   font-family: "Roboto Bold", Arial, sans-serif;
   font-size: 60px;
@@ -698,7 +698,7 @@ img {
 .slides-nav-wrap {
   justify-content: space-between;
   width: 712px;
-  margin-top: 466px;
+  margin-top: 470px;
   margin-bottom: 41px;
 }
 .slide-nav {
@@ -798,7 +798,6 @@ img {
 }
 .catalog-list  {
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: flex-start;
   padding: 0;
   margin: 0;
@@ -1289,6 +1288,24 @@ img {
   top: 16px;
   right: 17px;
 }
+.callback-form .form-input.on-error {
+	outline: 2px dashed transparent;
+	animation: redAlert 1s ease-in-out;
+}
+@keyframes redAlert {
+	0% {
+		outline: 2px dashed crimson;
+		outline-offset: 1px;
+	}
+	50% {
+		outline: 2px dashed crimson;
+		outline-offset: 5px;
+	}
+	100% {
+		outline-color: transparent;
+	}
+}
+
 
 .inner-page {
   font-family: "Roboto Medium", Arial, sans-serif;
@@ -1561,7 +1578,7 @@ img {
   margin-left: 16px;
 }
 .filters input[type="checkbox"] + label {
-  margin-right: 19px;
+  margin-right: 20px;
 }
 .filters input[type="checkbox"]:nth-of-type(3) + label {
   margin-right: 22px;
@@ -1754,9 +1771,6 @@ img {
       rgba(146,205,255,1) 8px, rgba(146,205,255,1) 16px,  
       rgba(255,255,255,1) 16px, rgba(255,255,255,1) 24px, 
       rgba(254,158,144,1) 24px, rgba(254,158,144,1) 32px);
-}
-.form-border-invalid {
-  background: linear-gradient(45deg, gold 0%, orangered 10%, crimson 20%, purple 50%, crimson 80%, orangered 90%, gold 100%);
 }
 .form-border-top,
 .form-border-left {

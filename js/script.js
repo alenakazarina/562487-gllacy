@@ -180,47 +180,27 @@ function animate(options) {
 }
 
 if(form !== null) {
-  var email = document.querySelector(".callback-form [name=email]");
+	var inputs = document.querySelectorAll(".callback-form .form-input");
   form.addEventListener('submit', function(evt) {
-    if (!email.value) {
-      evt.preventDefault();
-      email.focus();
-      animate({
-        duration: 1500,
-        timing: function(timeFraction) {
-          return timeFraction;
-        },
-        draw: function(progress) {
-          borderTop.classList.add('form-border-invalid');
-          borderLeft.classList.add('form-border-invalid');
-          borderBottom.classList.add('form-border-invalid');
-          borderRight.classList.add('form-border-invalid');
-          borderTop.classList.remove('form-border');
-          borderLeft.classList.remove('form-border');
-          borderBottom.classList.remove('form-border');
-          borderRight.classList.remove('form-border');
-          borderTop.style.width = progress * 95 + '%';
-          borderLeft.style.height = progress * 95 + '%';
-          borderBottom.style.width = progress * 95 + '%';
-          borderRight.style.height = progress * 95 + '%';
-          borderTop.style.opacity = 1-progress;
-          borderLeft.style.opacity = 1-progress;
-          borderBottom.style.opacity = 1-progress;
-          borderRight.style.opacity = 1-progress;
-        } 
-      }); 
-    } else {
-        if( borderTop.classList.contains('form-border-invalid')) {
-          borderTop.classList.remove('form-border-invalid');
-          borderLeft.classList.remove('form-border-invalid');
-          borderBottom.classList.remove('form-border-invalid');
-          borderRight.classList.remove('form-border-invalid');
-          borderTop.classList.add('form-border');
-          borderLeft.classList.add('form-border');
-          borderBottom.classList.add('form-border');
-          borderRight.classList.add('form-border');
-        } 
-      } 
+  	var flag = 0;
+  	var errorInputs = [];
+  	evt.preventDefault();
+  	for(var i=0; i < inputs.length; i++) {
+  		if(inputs[i].classList.contains('on-error')) {
+  			inputs[i].classList.remove('on-error');
+  		}
+	    if (!inputs[i].value) {
+	      errorInputs[flag] = inputs[i];
+	      flag++;
+	    }
+	  }
+	  if(!flag) {
+	  	form.submit();
+	  } else {
+	  	for(j=0; j<flag; j++) {
+	  		errorInputs[j].classList.add('on-error');
+	  	}
+	  }
   });
 }
 
@@ -244,7 +224,6 @@ if(openModalButton!==null && callbackForm !==null && closeModalButton!==null) {
 }
 function showModal(elem) {
   elem.classList.toggle("visually-hidden");
-  email.focus();
   animate({
       duration: 1500,
       timing: function(timeFraction) {
