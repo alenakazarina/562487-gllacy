@@ -314,6 +314,7 @@ img {
 .dropdown-menu-item:first-child {
 	min-height: 42px;
 	padding: 4px 0px 6px;
+	margin-bottom: -1px;
 	
 	position: relative;
   border-top-left-radius: 5px;
@@ -407,9 +408,12 @@ img {
 .search-block .opener:focus {
   background-color: #f8f7f4;
 }
+.search-title {
+  font-size: 0;
+}
 .search-form {
   width: 341px;
-  min-height: 84px;
+  height: 84px;
   padding: 20px 15px;
 
   position: absolute;
@@ -463,7 +467,7 @@ img {
 }
 .login-form {
   width: 277px;
-  min-height: 215px;
+  height: 215px;
   padding: 20px 18px; 
 
   position: absolute;
@@ -550,8 +554,8 @@ img {
 }
 .cart-form {
   width: 540px;
-  height: 242px;
-  padding: 20px 15px 0px;
+  min-height: 242px;
+  padding: 20px 13px 0px 18px;
 
   position: absolute;
   right: 3px;
@@ -573,6 +577,7 @@ img {
   opacity: 1;
 }
 .cart-form-item {
+  min-height: 33px;
 	margin-bottom: 20px;
 }
 .cart-form-item:last-of-type {
@@ -1112,8 +1117,6 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-
-  
 }
 .map-image {
   width: 1200px;
@@ -1377,7 +1380,7 @@ img {
 .filter-sorting .filter-layout:hover {
   color: #323232;
 }
-.filter-sorting .filter-layout:hover label[for="sorting"] {
+.filter-layout:hover label[for="sorting"] {
   border-top: 9px solid #323232;
 }
 .filter-sorting select { 
@@ -1563,7 +1566,7 @@ img {
 .filters input[type="checkbox"]:nth-of-type(3) + label {
   margin-right: 22px;
 }
-.filters input[type="checkbox"]:first-of-type + label{
+.filters input[type="checkbox"]:first-of-type + label {
 	margin-left: 15px;
 }
 .filters input[type="checkbox"]:last-of-type + label,
