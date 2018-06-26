@@ -1,14 +1,15 @@
-var menu = document.getElementById("dropdown-menu");
-var toggle = document.getElementById("dropdown-menu-toggle");
 
-toggle.addEventListener("focus", function( event ) {
+var menu = document.getElementById("dropdown-menu");
+var toggleMenu = document.getElementById("dropdown-menu-toggle");
+
+toggleMenu.addEventListener("focus", function( event ) {
   if (menu.className === "dropdown-menu flex-column active") {
     menu.className = "dropdown-menu flex-column visually-hidden";
   } else {
       menu.className = "dropdown-menu flex-column active";
   }   
 }, true);
-toggle.addEventListener("focusout", function( event ) {
+toggleMenu.addEventListener("focusout", function( event ) {
   if (menu.className === "dropdown-menu flex-column active") {
     menu.className = "dropdown-menu flex-column visually-hidden";
   } else {
@@ -23,21 +24,45 @@ menu.addEventListener("focusout", function( event ) {
   menu.className = "dropdown-menu flex-column visually-hidden";
 }, true);
 
+var navLinks = document.getElementsByClassName("site-navigation-link");
+var linksBg = document.getElementsByClassName("link-bg");
+for (var i=0; i<navLinks.length; i++) {
+  navLinks[i].addEventListener('focus', function() {
+    this.parentNode.classList.add("focus");
+  }, true);
+}
+for (var i=0; i<navLinks.length; i++) {
+  navLinks[i].addEventListener('focusout', function() { 
+    this.parentNode.classList.remove("focus");
+    if(this.parentNode.classList.contains("active")) {
+      this.parentNode.classList.remove("active");
+    }
+  }, true);
+}
+for (var i=0; i<navLinks.length; i++) {
+  navLinks[i].addEventListener('click', function() {
+    this.parentNode.classList.add("active");
+  }, true);
+}
 
 var search = document.getElementById("search-form");
-toggle = document.getElementById("search-toggle");
+toggleSearch = document.getElementById("search-toggle");
 
-toggle.addEventListener("focus", function( event ) {
+toggleSearch.addEventListener("focus", function( event ) {
   if (search.className === "search-form active") {
+    toggleSearch.style.background = '#f8f7f4';
     search.className = "search-form visually-hidden";
   } else {
-    	search.className = "search-form active";
+      toggleSearch.style.background = '#f8f7f4';
+    	search.className = "search-form active";  
   }   
 }, true);
-toggle.addEventListener("focusout", function( event ) {
+toggleSearch.addEventListener("focusout", function( event ) {
   if (search.className === "search-form active") {
+    toggleSearch.style.background = 'rgba(255,255,255, 0.2)';
     search.className = "search-form visually-hidden";
   } else {
+      toggleSearch.style.background = 'rgba(255,255,255, 0.2)';
      	search.className = "search-form active";
   }   
 }, true);
@@ -51,19 +76,23 @@ search.addEventListener("focusout", function( event ) {
 
 
 var login = document.getElementById("login-form");
-toggle = document.getElementById("login-toggle");
+toggleLogin = document.getElementById("login-toggle");
 
-toggle.addEventListener("focus", function( event ) {
+toggleLogin.addEventListener("focus", function( event ) {
   if (login.className === "login-form flex-column active") {
+    toggleLogin.style.background = '#f8f7f4';
     login.className = "login-form flex-column visually-hidden";
   } else {
+      toggleLogin.style.background = '#f8f7f4';
     	login.className = "login-form flex-column active";
   }   
 }, true);
-toggle.addEventListener("focusout", function( event ) {
+toggleLogin.addEventListener("focusout", function( event ) {
   if (login.className === "login-form flex-column active") {
+    toggleLogin.style.background = 'rgba(255,255,255, 0.2)';
     login.className = "login-form flex-column visually-hidden";
   } else {
+      toggleLogin.style.background = 'rgba(255,255,255, 0.2)';
      	login.className = "login-form flex-column active";
   }   
 }, true);
@@ -77,10 +106,10 @@ login.addEventListener("focusout", function( event ) {
 
 
 var cart = document.getElementById("cart-form");
-toggle = document.getElementById("cart-toggle");
+var toggleCart = document.getElementById("cart-toggle");
 
 if(cart !== null) {
-	toggle.addEventListener("focus", function( event ) {
+	toggleCart.addEventListener("focus", function( event ) {
 	  if (cart.className === "cart-form flex-column active") {
 	    cart.className = "cart-form flex-column visually-hidden";
 	  } else {
@@ -89,10 +118,10 @@ if(cart !== null) {
 	}, true);
 }
 if(cart !== null) {
-	toggle.addEventListener("focusout", function( event ) {
+	toggleCart.addEventListener("focusout", function( event ) {
 	  if (cart.className === "cart-form flex-column active") {
 	    cart.className = "cart-form flex-column visually-hidden";
-	  } else {
+	  } else if (cart.className === "cart-form flex-column active") {
 	     	cart.className = "cart-form flex-column active";
 	  }   
 	}, true);
@@ -138,29 +167,11 @@ for(var i=0; i<navItems.length; i++) {
   }, true);
 }
 
-var openModalButton = document.getElementById("modal-opener");
-var callbackForm = document.getElementById("modal-callback");
-var closeModalButton = document.getElementById("close-modal");
-
-if(openModalButton!==null && callbackForm !==null && closeModalButton!==null) {
-  openModalButton.addEventListener('click', function() {
-    showModal(callbackForm);
-  }, true);
-  closeModalButton.addEventListener('click', function() {
-    closeModal(callbackForm);
-  }, true);
-}
-window.addEventListener('keyup', function (e) {
-  if (e.which === 27) { 
-      closeModal(callbackForm);
-  }
-})
-function showModal(elem) {
-	elem.className = "modal modal-callback";
-}
-function closeModal(elem) {
-	elem.className = "modal modal-callback visually-hidden";
-}
+var form = document.getElementById('callback-form');
+var borderTop = document.getElementById('form-border-top');
+var borderLeft = document.getElementById('form-border-left');
+var borderBottom = document.getElementById('form-border-bottom');
+var borderRight = document.getElementById('form-border-right');
 
 function animate(options) {
   var start = performance.now();
@@ -176,15 +187,73 @@ function animate(options) {
   });
 }
 
-var form = document.getElementById('callback-form');
-var borderTop = document.getElementById('form-border-top');
-var borderLeft = document.getElementById('form-border-left');
-var borderBottom = document.getElementById('form-border-bottom');
-var borderRight = document.getElementById('form-border-right');
-
 if(form !== null) {
-  form.addEventListener('focus', function() {
-    animate({
+  var email = document.querySelector(".callback-form [name=email]");
+  form.addEventListener('submit', function(evt) {
+    if (!email.value) {
+      evt.preventDefault();
+      email.focus();
+      animate({
+        duration: 1500,
+        timing: function(timeFraction) {
+          return timeFraction;
+        },
+        draw: function(progress) {
+          borderTop.classList.add('form-border-invalid');
+          borderLeft.classList.add('form-border-invalid');
+          borderBottom.classList.add('form-border-invalid');
+          borderRight.classList.add('form-border-invalid');
+          borderTop.classList.remove('form-border');
+          borderLeft.classList.remove('form-border');
+          borderBottom.classList.remove('form-border');
+          borderRight.classList.remove('form-border');
+          borderTop.style.width = progress * 95 + '%';
+          borderLeft.style.height = progress * 95 + '%';
+          borderBottom.style.width = progress * 95 + '%';
+          borderRight.style.height = progress * 95 + '%';
+          borderTop.style.opacity = 1-progress;
+          borderLeft.style.opacity = 1-progress;
+          borderBottom.style.opacity = 1-progress;
+          borderRight.style.opacity = 1-progress;
+        } 
+      }); 
+    } else {
+        if( borderTop.classList.contains('form-border-invalid')) {
+          borderTop.classList.remove('form-border-invalid');
+          borderLeft.classList.remove('form-border-invalid');
+          borderBottom.classList.remove('form-border-invalid');
+          borderRight.classList.remove('form-border-invalid');
+          borderTop.classList.add('form-border');
+          borderLeft.classList.add('form-border');
+          borderBottom.classList.add('form-border');
+          borderRight.classList.add('form-border');
+        } 
+      } 
+  });
+}
+
+var openModalButton = document.getElementById("modal-opener");
+var callbackForm = document.getElementById("modal-callback");
+var closeModalButton = document.getElementById("close-modal");
+
+if(openModalButton!==null && callbackForm !==null && closeModalButton!==null) {
+  openModalButton.addEventListener('click', function() {
+    showModal(callbackForm);
+  }, true);
+  closeModalButton.addEventListener('click', function() {
+    closeModal(callbackForm);
+  }, true);
+
+  window.addEventListener('keyup', function (e) {
+    if (e.which === 27) { 
+      closeModal(callbackForm);
+    }
+  })
+}
+function showModal(elem) {
+  elem.classList.toggle("visually-hidden");
+  email.focus();
+  animate({
       duration: 1500,
       timing: function(timeFraction) {
         return timeFraction;
@@ -200,36 +269,9 @@ if(form !== null) {
         borderRight.style.opacity = 1-progress;
       }
     });
-  }, true);
-
-  form.addEventListener('invalid', function() {
-    animate({
-      duration: 1000,
-      timing: function(timeFraction) {
-        return timeFraction;
-      },
-      draw: function(progress) {
-        borderTop.classList.remove('form-border');
-        borderLeft.classList.remove('form-border');
-        borderBottom.classList.remove('form-border');
-        borderRight.classList.remove('form-border');
-        borderTop.classList.add('form-border-invalid');
-        borderLeft.classList.add('form-border-invalid');
-        borderBottom.classList.add('form-border-invalid');
-        borderRight.classList.add('form-border-invalid');
-      }
-    });
-  }, true);
-  form.addEventListener('submit', function() {
-    borderTop.classList.remove('form-border-invalid');
-    borderLeft.classList.remove('form-border-invalid');
-    borderBottom.classList.remove('form-border-invalid');
-    borderRight.classList.remove('form-border-invalid');
-    borderTop.classList.add('form-border');
-    borderLeft.classList.add('form-border');
-    borderBottom.classList.add('form-border');
-    borderRight.classList.add('form-border');
-  }, true);
+}
+function closeModal(elem) {
+  elem.classList.toggle("visually-hidden");
 }
 
 var firstRange = document.querySelector("[type=range].first");
