@@ -224,6 +224,8 @@ if(openModalButton!==null && callbackForm !==null && closeModalButton!==null) {
 }
 function showModal(elem) {
   elem.classList.toggle("visually-hidden");
+  var name = document.querySelector('.callback-form [name=username]');
+  name.focus();
   animate({
       duration: 1500,
       timing: function(timeFraction) {
