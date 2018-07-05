@@ -1,31 +1,123 @@
-
+function showElement(element) {
+	element.classList.toggle('visually-hidden');
+	element.classList.toggle('active');
+}
+function hideElement(element) {
+	element.classList.toggle('active');
+	element.classList.toggle('visually-hidden');
+}
+function isActive(element) {
+	if (element.classList.contains('active')) {
+		return true;
+	} 
+	return false;
+}
 var menu = document.getElementById("dropdown-menu");
 var toggleMenu = document.getElementById("dropdown-menu-toggle");
 
-toggleMenu.addEventListener("focus", function( event ) {
-  if (menu.className === "dropdown-menu flex-column active") {
-    menu.className = "dropdown-menu flex-column visually-hidden";
+toggleMenu.addEventListener("focus", function() {
+  if (isActive(menu)) {
+   	hideElement(menu);
   } else {
-      menu.className = "dropdown-menu flex-column active";
+  	showElement(menu);
+  }
+}, true);
+toggleMenu.addEventListener("focusout", function() {
+  if (isActive(menu)) {
+   	hideElement(menu);
+  } else {
+  	showElement(menu);
+  }
+}, true);
+menu.addEventListener("focus", function() {
+ 	showElement(this);
+}, true);
+menu.addEventListener("focusout", function() {
+	hideElement(this);
+}, true);
+
+var search = document.getElementById("search-form");
+toggleSearch = document.getElementById("search-toggle");
+
+toggleSearch.addEventListener("focus", function( event ) {
+  if (isActive(search)) {
+    hideElement(search);
+  } else {
+    	showElement(search);  
   }   
 }, true);
-toggleMenu.addEventListener("focusout", function( event ) {
-  if (menu.className === "dropdown-menu flex-column active") {
-    menu.className = "dropdown-menu flex-column visually-hidden";
+toggleSearch.addEventListener("focusout", function( event ) {
+  if (isActive(search)) {
+    hideElement(search);
   } else {
-      menu.className = "dropdown-menu flex-column active";
+     	showElement(search);
+  }   
+}, true);
+search.addEventListener("focus", function( event ) {
+  showElement(search);
+}, true);
+search.addEventListener("focusout", function( event ) {
+  hideElement(search);
+}, true);
+
+
+var login = document.getElementById("login-form");
+toggleLogin = document.getElementById("login-toggle");
+
+toggleLogin.addEventListener("focus", function( event ) {
+  if (isActive(login)) {
+    hideElement(login);
+  } else {
+    	showElement(login);
+  }   
+}, true);
+toggleLogin.addEventListener("focusout", function( event ) {
+  if (isActive(login)) {
+    hideElement(login);
+  } else {
+     	showElement(login);
   }   
 }, true);
 
-menu.addEventListener("focus", function( event ) {
-  menu.className = "dropdown-menu flex-column active";
+login.addEventListener("focus", function( event ) {
+  showElement(login);
 }, true);
-menu.addEventListener("focusout", function( event ) {
-  menu.className = "dropdown-menu flex-column visually-hidden";
+login.addEventListener("focusout", function( event ) {
+  hideElement(login);
 }, true);
+
+var cart = document.getElementById("cart-form");
+var toggleCart = document.getElementById("cart-toggle");
+
+if(cart !== null) {
+	toggleCart.addEventListener("focus", function( event ) {
+	  if (isActive(cart)) {
+	    hideElement(cart);
+	  } else {
+	    	showElement(cart);
+	  }   
+	}, true);
+
+	toggleCart.addEventListener("focusout", function( event ) {
+	  if (isActive(cart)) {
+	    hideElement(cart)
+	  } else {
+	  		showElement(cart);	
+	  }   
+	}, true);
+
+	cart.addEventListener("focus", function( event ) {
+	  showElement(cart);
+	}, true);
+
+	cart.addEventListener("focusout", function( event ) {
+	  hideElement(cart);
+	}, true);
+}
 
 var navLinks = document.getElementsByClassName("site-navigation-link");
 var linksBg = document.getElementsByClassName("link-bg");
+
 for (var i=0; i<navLinks.length; i++) {
   navLinks[i].addEventListener('focus', function() {
     this.parentNode.classList.add("focus");
@@ -34,7 +126,7 @@ for (var i=0; i<navLinks.length; i++) {
 for (var i=0; i<navLinks.length; i++) {
   navLinks[i].addEventListener('focusout', function() { 
     this.parentNode.classList.remove("focus");
-    if(this.parentNode.classList.contains("active")) {
+    if(isActive(this.parentNode)) {
       this.parentNode.classList.remove("active");
     }
   }, true);
@@ -45,90 +137,6 @@ for (var i=0; i<navLinks.length; i++) {
   }, true);
 }
 
-var search = document.getElementById("search-form");
-toggleSearch = document.getElementById("search-toggle");
-
-toggleSearch.addEventListener("focus", function( event ) {
-  if (search.className === "search-form active") {
-    search.className = "search-form visually-hidden";
-  } else {
-    	search.className = "search-form active";  
-  }   
-}, true);
-toggleSearch.addEventListener("focusout", function( event ) {
-  if (search.className === "search-form active") {
-    search.className = "search-form visually-hidden";
-  } else {
-     	search.className = "search-form active";
-  }   
-}, true);
-
-search.addEventListener("focus", function( event ) {
-  search.className = "search-form active";
-}, true);
-search.addEventListener("focusout", function( event ) {
-  search.className = "search-form visually-hidden";
-}, true);
-
-
-var login = document.getElementById("login-form");
-toggleLogin = document.getElementById("login-toggle");
-
-toggleLogin.addEventListener("focus", function( event ) {
-  if (login.className === "login-form flex-column active") {
-    login.className = "login-form flex-column visually-hidden";
-  } else {
-    	login.className = "login-form flex-column active";
-  }   
-}, true);
-toggleLogin.addEventListener("focusout", function( event ) {
-  if (login.className === "login-form flex-column active") {
-    login.className = "login-form flex-column visually-hidden";
-  } else {
-     	login.className = "login-form flex-column active";
-  }   
-}, true);
-
-login.addEventListener("focus", function( event ) {
-  login.className = "login-form flex-column active";
-}, true);
-login.addEventListener("focusout", function( event ) {
-  login.className = "login-form flex-column visually-hidden";
-}, true);
-
-
-var cart = document.getElementById("cart-form");
-var toggleCart = document.getElementById("cart-toggle");
-
-if(cart !== null) {
-	toggleCart.addEventListener("focus", function( event ) {
-	  if (cart.className === "cart-form flex-column active") {
-	    cart.className = "cart-form flex-column visually-hidden";
-	  } else {
-	    	cart.className = "cart-form flex-column active";
-	  }   
-	}, true);
-}
-if(cart !== null) {
-	toggleCart.addEventListener("focusout", function( event ) {
-	  if (cart.className === "cart-form flex-column active") {
-	    cart.className = "cart-form flex-column visually-hidden";
-	  } else if (cart.className === "cart-form flex-column active") {
-	     	cart.className = "cart-form flex-column active";
-	  }   
-	}, true);
-}
-if(cart !== null) {
-	cart.addEventListener("focus", function( event ) {
-	  cart.className = "cart-form flex-column active";
-	}, true);
-}
-if(cart !== null) {
-	cart.addEventListener("focusout", function( event ) {
-	  cart.className = "cart-form flex-column visually-hidden";
-	}, true);
-}
-
 var navItems = document.getElementsByClassName("slide-nav");
 var slides = document.getElementsByClassName("product-slide");
 var colors = ["#849d8f","#8996a6","#9d8b84"];
@@ -137,7 +145,7 @@ var currentSlide = 0;
 
 function getCurrent() {
   for(var i=0; i<navItems.length; i++) {
-    if(navItems[i].className === "slide-nav slide-nav-current") {
+    if(navItems[i].classList.contains('slide-nav-current')) {
       currentSlide = i;
     }
   }
@@ -153,53 +161,34 @@ function slideChange() {
 }
 for(var i=0; i<navItems.length; i++) {
   navItems[i].addEventListener("click", function( event ) {
-    navItems[currentSlide].className = "slide-nav";
-    event.target.className = "slide-nav slide-nav-current";
+    navItems[currentSlide].classList.remove('slide-nav-current');
+    event.target.classList.add('slide-nav-current');
     slideChange(); 
   }, true);
 }
 
 var form = document.getElementById('callback-form');
-var borderTop = document.getElementById('form-border-top');
-var borderLeft = document.getElementById('form-border-left');
-var borderBottom = document.getElementById('form-border-bottom');
-var borderRight = document.getElementById('form-border-right');
-
-function animate(options) {
-  var start = performance.now();
-  requestAnimationFrame(function animate(time) {
-    var timeFraction = (time - start) / options.duration;
-    if (timeFraction > 1) timeFraction = 1;
-
-    var progress = options.timing(timeFraction)
-    options.draw(progress);
-    if (timeFraction < 1) {
-      requestAnimationFrame(animate);
-    }
-  });
+var inputs = document.querySelectorAll(".callback-form .form-input");
+function removeError(elems) {
+	for(var i=0; i < elems.length; i++) {
+		if(elems[i].classList.contains('on-error')) {
+			elems[i].classList.remove('on-error');
+		}
+  }
 }
-
 if(form !== null) {
-	var inputs = document.querySelectorAll(".callback-form .form-input");
   form.addEventListener('submit', function(evt) {
   	var flag = 0;
-  	var errorInputs = [];
+  	removeError(inputs);
   	evt.preventDefault();
   	for(var i=0; i < inputs.length; i++) {
-  		if(inputs[i].classList.contains('on-error')) {
-  			inputs[i].classList.remove('on-error');
-  		}
-	    if (!inputs[i].value) {
-	      errorInputs[flag] = inputs[i];
+	    if(!inputs[i].value) {
+	      inputs[i].classList.add('on-error');
 	      flag++;
 	    }
 	  }
 	  if(!flag) {
 	  	form.submit();
-	  } else {
-	  	for(j=0; j<flag; j++) {
-	  		errorInputs[j].classList.add('on-error');
-	  	}
 	  }
   });
 }
@@ -222,26 +211,44 @@ if(openModalButton!==null && callbackForm !==null && closeModalButton!==null) {
     }
   })
 }
+
+var borders = document.querySelectorAll('.form-border');
+function animate(options) {
+  var start = performance.now();
+  requestAnimationFrame(function animate(time) {
+    var timeFraction = (time - start) / options.duration;
+    if (timeFraction > 1) timeFraction = 1;
+
+    var progress = options.timing(timeFraction)
+    options.draw(progress);
+    if (timeFraction < 1) {
+      requestAnimationFrame(animate);
+    }
+  });
+}
+
 function showModal(elem) {
   elem.classList.toggle("visually-hidden");
-  var name = document.querySelector('.callback-form [name=username]');
+  removeError(inputs);
+	var name = document.querySelector('.callback-form [name=username]');
   name.focus();
   animate({
-      duration: 1500,
-      timing: function(timeFraction) {
-        return timeFraction;
-      },
-      draw: function(progress) {
-        borderTop.style.width = progress * 95 + '%';
-        borderLeft.style.height = progress * 95 + '%';
-        borderBottom.style.width = progress * 95 + '%';
-        borderRight.style.height = progress * 95 + '%';
-        borderTop.style.opacity = 1-progress;
-        borderLeft.style.opacity = 1-progress;
-        borderBottom.style.opacity = 1-progress;
-        borderRight.style.opacity = 1-progress;
-      }
-    });
+    duration: 1500,
+    timing: function(timeFraction) {
+      return timeFraction;
+    },
+    draw: function(progress) {
+    	for (var i=0; i<borders.length; i++) {
+    		if(i%2 == 0) {
+    			borders[i].style.width = progress * 95 + '%';
+    			borders[i].style.opacity = 1-progress;
+    		} else {
+    			borders[i].style.height = progress * 95 + '%';
+    			borders[i].style.opacity = 1-progress;
+    		}
+    	}
+    }
+  });
 }
 function closeModal(elem) {
   elem.classList.toggle("visually-hidden");

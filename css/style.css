@@ -1291,6 +1291,7 @@ img {
 .callback-form .form-input.on-error {
 	outline: 2px dashed transparent;
 	animation: redAlert 1s ease-in-out;
+  animation-iteration-count: infinite;
 }
 @keyframes redAlert {
 	0% {
@@ -1302,7 +1303,8 @@ img {
 		outline-offset: 5px;
 	}
 	100% {
-		outline-color: transparent;
+		outline: 2px dashed transparent;
+    outline-offset: 1px;
 	}
 }
 
